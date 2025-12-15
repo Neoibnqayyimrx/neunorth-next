@@ -94,7 +94,7 @@ const Products = () => {
   const descriptionRef = useRef<HTMLParagraphElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<gsap.core.Tween | null>(null);
+  const animationRef = useRef<gsap.core.Tween | gsap.core.Timeline | null>(null);
 
   // Updated tabs with your desired labels but keeping the original keys
   const tabs = [
