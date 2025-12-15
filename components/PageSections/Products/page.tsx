@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import gsap from "gsap";
 import "./Products.css";
 
 interface SlideData {
@@ -15,7 +14,6 @@ interface SlideData {
   };
 }
 
-// Keep your original data structure unchanged
 const sustainabilityData: Record<string, SlideData[]> = {
   "project-management": [
     {
@@ -87,16 +85,12 @@ const sustainabilityData: Record<string, SlideData[]> = {
 const Products = () => {
   const [activeTab, setActiveTab] = useState("project-management");
   const [isPlaying, setIsPlaying] = useState(true);
+  const [progress, setProgress] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
+  
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const progressIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const contentRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const descriptionRef = useRef<HTMLParagraphElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const progressBarRef = useRef<HTMLDivElement>(null);
-  const animationRef = useRef<gsap.core.Tween | gsap.core.Timeline | null>(null);
-
-  // Updated tabs with your desired labels but keeping the original keys
   const tabs = [
     { key: "project-management", label: "Project Management" },
     { key: "software-developement", label: "Software Development" },
@@ -109,92 +103,52 @@ const Products = () => {
   const currentSlide = currentSlides[0];
   const totalSlides = Object.keys(sustainabilityData).length;
 
-  // Animate content on tab change
+  // Trigger animation when tab changes
   useEffect(() => {
-    if (animationRef.current) {
-      animationRef.current.kill();
-    }
-
-    const tl = gsap.timeline();
-
-    // Reset positions
-    gsap.set(
-      [
-        imageRef.current,
-        headingRef.current,
-        descriptionRef.current,
-        buttonRef.current,
-      ],
-      {
-        opacity: 0,
-        x: 0,
-        y: 0,
-        scale: 1,
-      }
-    );
-
-    // Animate in
-    tl.fromTo(
-      imageRef.current,
-      { scale: 1.1, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.8, ease: "power3.out" }
-    )
-      .fromTo(
-        headingRef.current,
-        { x: 30, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" },
-        "-=0.4"
-      )
-      .fromTo(
-        descriptionRef.current,
-        { x: 30, opacity: 0 },
-        { x: 0, opacity: 1, duration: 0.6, ease: "power2.out" },
-        "-=0.4"
-      )
-      .fromTo(
-        buttonRef.current,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.5, ease: "back.out(1.7)" },
-        "-=0.3"
-      );
-
-    animationRef.current = tl;
-
-    return () => {
-      if (animationRef.current) {
-        animationRef.current.kill();
-      }
-    };
+    setIsAnimating(false);
+    const timeout = setTimeout(() => setIsAnimating(true), 50);
+    return () => clearTimeout(timeout);
   }, [activeTab]);
 
   // Progress bar animation
   useEffect(() => {
-    if (progressBarRef.current) {
-      gsap.killTweensOf(progressBarRef.current);
+    if (progressIntervalRef.current) {
+      clearInterval(progressIntervalRef.current);
+    }
 
-      if (isPlaying) {
-        gsap.set(progressBarRef.current, { width: "0%" });
-        animationRef.current = gsap.to(progressBarRef.current, {
-          width: "100%",
-          duration: 5,
-          ease: "none",
+    if (isPlaying) {
+      setProgress(0);
+      const duration = 5000; // 5 seconds
+      const interval = 50; // Update every 50ms
+      const increment = (interval / duration) * 100;
+
+      progressIntervalRef.current = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            return 0;
+          }
+          return prev + increment;
         });
-      }
+      }, interval);
+    } else {
+      setProgress(0);
     }
 
     return () => {
-      if (animationRef.current) {
-        animationRef.current.kill();
+      if (progressIntervalRef.current) {
+        clearInterval(progressIntervalRef.current);
       }
     };
   }, [isPlaying, activeTab]);
 
   // Auto-advance slides
   useEffect(() => {
-    let interval: NodeJS.Timeout;
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
 
     if (isPlaying) {
-      interval = setInterval(() => {
+      intervalRef.current = setInterval(() => {
         const tabKeys = Object.keys(sustainabilityData);
         const currentIndex = tabKeys.indexOf(activeTab);
         const nextIndex = (currentIndex + 1) % tabKeys.length;
@@ -203,17 +157,16 @@ const Products = () => {
     }
 
     return () => {
-      if (interval) clearInterval(interval);
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
     };
   }, [isPlaying, activeTab]);
 
   const handleTabClick = (tabKey: string) => {
     setActiveTab(tabKey);
     setIsPlaying(false);
-
-    setTimeout(() => {
-      setIsPlaying(true);
-    }, 100);
+    setTimeout(() => setIsPlaying(true), 100);
   };
 
   const handlePlayPause = () => {
@@ -223,8 +176,7 @@ const Products = () => {
   const handlePrevious = () => {
     const tabKeys = Object.keys(sustainabilityData);
     const currentIndex = tabKeys.indexOf(activeTab);
-    const prevIndex =
-      currentIndex === 0 ? tabKeys.length - 1 : currentIndex - 1;
+    const prevIndex = currentIndex === 0 ? tabKeys.length - 1 : currentIndex - 1;
     setActiveTab(tabKeys[prevIndex]);
   };
 
@@ -256,9 +208,7 @@ const Products = () => {
                 <React.Fragment key={tab.key}>
                   <button
                     onClick={() => handleTabClick(tab.key)}
-                    className={`tab-button ${
-                      activeTab === tab.key ? "active" : ""
-                    }`}
+                    className={`tab-button ${activeTab === tab.key ? "active" : ""}`}
                     aria-label={`View ${tab.label} section`}
                     aria-current={activeTab === tab.key ? "true" : "false"}
                   >
@@ -362,8 +312,8 @@ const Products = () => {
           <div className="progress-section">
             <div className="progress-bar-container">
               <div
-                ref={progressBarRef}
                 className="progress-bar"
+                style={{ width: `${progress}%` }}
                 aria-hidden="true"
               ></div>
             </div>
@@ -375,7 +325,7 @@ const Products = () => {
                 <div className="card">
                   <div className="card-content">
                     <div className="image-section">
-                      <div ref={imageRef} className="image-wrapper">
+                      <div className={`image-wrapper ${isAnimating ? 'animate-in' : ''}`}>
                         <Image
                           src={currentSlide.image}
                           alt={currentSlide.content.heading}
@@ -388,20 +338,17 @@ const Products = () => {
                     </div>
 
                     <div className="text-section">
-                      <div ref={contentRef} className="text-content">
-                        <h2 ref={headingRef} className="content-heading">
+                      <div className="text-content">
+                        <h2 className={`content-heading ${isAnimating ? 'animate-slide-left' : ''}`}>
                           {currentSlide.content.heading}
                         </h2>
-                        <p ref={descriptionRef} className="content-description">
+                        <p className={`content-description ${isAnimating ? 'animate-slide-left-delay' : ''}`}>
                           {currentSlide.content.description}
                         </p>
                         <button
-                          ref={buttonRef}
-                          className="btn primary"
+                          className={`btn primary ${isAnimating ? 'animate-bounce-up' : ''}`}
                           onClick={() =>
-                            console.log(
-                              `Clicked: ${currentSlide.content.buttonText}`
-                            )
+                            console.log(`Clicked: ${currentSlide.content.buttonText}`)
                           }
                         >
                           {currentSlide.content.buttonText}

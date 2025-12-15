@@ -11,7 +11,6 @@
   flex-direction: column;
 }
 
-
 .content-wrapper {
   position: relative;
   z-index: 10;
@@ -196,8 +195,6 @@
   line-height: 1.625;
 }
 
- 
-
 @media (min-width: 768px) {
   .main-heading {
     font-size: 2.25rem;
@@ -249,5 +246,61 @@
 
   .content-heading {
     font-size: 2.5rem;
+  }
+}
+
+/* animations */
+
+.animate-in {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideFromRight 0.6s ease-out forwards;
+}
+
+.animate-slide-left-delay {
+  animation: slideFromRight 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-bounce-up {
+  animation: bounceUp 0.5s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
