@@ -1,0 +1,26 @@
+ /* about.css */
+
+/* Container for consistent horizontal margins */
+.about-container {
+  max-width: 100%; /* or your preferred max width */
+  margin: 0 auto;
+  padding: 0 1.5rem; /* Adjust padding as needed */
+}
+
+/* Consistent vertical spacing between sections */
+.section-spacing {
+  margin: 4rem 0; /* Adjust vertical spacing as needed */
+}
+
+/* Or for individual control */
+.vertical-spacing-large {
+  margin: 6rem 0;
+}
+
+.vertical-spacing-medium {
+  margin: 4rem 0;
+}
+
+.vertical-spacing-small {
+  margin: 2rem 0;
+}

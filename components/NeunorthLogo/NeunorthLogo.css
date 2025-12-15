@@ -1,0 +1,14 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.logo img {
+    height: 2rem; /* adjust size as needed */
+    width: auto;
+}
+
+.logo:hover {
+    color: var(--primary); /* If your logo has text next to it */
+}

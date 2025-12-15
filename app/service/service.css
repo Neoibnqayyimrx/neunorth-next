@@ -1,0 +1,121 @@
+/* Service Hero Section */
+#service-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#service-section .service-item.hero {
+  background-size: cover;
+  color: var(--color-white);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
+  min-height: 500px;
+}
+
+#service-section .service-item.hero .image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+/* Next.js Image compatibility */
+#service-section .service-item.hero .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+#service-section .service-item.hero .service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 60px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#service-section .service-item.hero .service-content h2 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+#service-section .service-item.hero .description {
+  color: var(--color-white);
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+#service-section .service-item.hero .service-cta {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--color-white);
+  color: var(--primary);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
+#service-section .service-item.hero .service-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #service-section .service-item.hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  #service-section .service-item.hero .service-content {
+    padding: 40px 30px;
+  }
+  
+  #service-section .service-item.hero .service-content h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  #service-section {
+    padding: 40px 15px;
+  }
+  
+  #service-section .service-item.hero .service-content {
+    padding: 30px 20px;
+  }
+  
+  #service-section .service-item.hero .service-content h2 {
+    font-size: 28px;
+  }
+  
+  #service-section .service-item.hero .description {
+    font-size: 16px;
+  }
+  
+  #service-section .service-item.hero .service-cta {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}

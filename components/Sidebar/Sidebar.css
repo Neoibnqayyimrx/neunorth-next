@@ -1,0 +1,54 @@
+.sidebar {
+    width: 350px;
+    height: 100vh;
+    position: fixed;
+    left: -400px;
+    top: 0;
+    background: var(--bg-base);
+    box-shadow: -4px 0 30px rgba(0,0,0,0.2);
+    padding: 20px;
+    z-index: 1000;
+    transition: left 0.3s ease; /* smoother and explicit */
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+/* Top Section */
+.sidebar .top {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Close Button */
+.sidebar .close-btn {
+    background: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.sidebar .middle {
+    margin-top: 40px;
+}
+
+.sidebar .route {
+    display: block;
+    margin: 20px 0;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.sidebar .route:hover,
+.sidebar .route:active {
+    color: var(--primary);
+}
