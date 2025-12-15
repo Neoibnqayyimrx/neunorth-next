@@ -7,6 +7,9 @@ import Team from "@/segments/Team/page";
 import Difference from "@/segments/Difference/page";
 import Mission1 from "@/components/PageSections/Mission1/page";
 
+export const dynamic = "force-dynamic";
+
+
 export default function AboutPage() {
   return (
     <div id="about">
