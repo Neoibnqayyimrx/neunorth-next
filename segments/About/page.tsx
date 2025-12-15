@@ -4,8 +4,13 @@ import "./About.css";
 import Image from "next/image";
 
 import VRImage from "@/public/assets/vr.png";
+import dynamic from 'next/dynamic';
 
 import { convertHexToRgba } from "@/util/page";
+const NigeriaMap = dynamic(() => import('@/components/GroupMap/page'), {
+  ssr: false,
+  loading: () => <div>Loading map...</div>
+});
 import GroupMap from "@/components/GroupMap/page"
 
 import gsap from "gsap";
@@ -189,7 +194,7 @@ const About = () => {
         </div>
 
         <div>
-          <GroupMap />
+            <NigeriaMap />
         </div>
 
         {/* Why Neunorth */}
