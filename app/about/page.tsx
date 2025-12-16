@@ -5,7 +5,7 @@ import Mission from "@/components/PageSections/Mission/page";
 import Products from "@/components/PageSections/Products/page";
 import Team from "@/segments/Team/page";
 import Difference from "@/segments/Difference/page";
-import Mission1 from "@/components/PageSections/Mission1/page";
+import Commitment from "@/components/PageSections/Commitment/page";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +21,7 @@ export default function AboutPage() {
       </div>
       
       <div className="about-container section-spacing">
-        <Mission1 />
+        <Commitment />
       </div>
       
       <div className="about-container section-spacing">

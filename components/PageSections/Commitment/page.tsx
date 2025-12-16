@@ -1,6 +1,6 @@
 "use client";
 import { FC, useRef } from "react";
-import "./Mission1.css";
+import "./Commitment.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -9,15 +9,15 @@ import missionImage from "@/public/assets/blog2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface Mission1Props {}
+interface CommitmentProps {}
 
-const Mission1: FC<Mission1Props> = () => {
+const Commitment: FC<CommitmentProps> = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       gsap.fromTo(
-        "#mission1 .mission1-content",
+        "#commitment .commitment-content",
         { x: -80, opacity: 0 },
         {
           x: 0,
@@ -33,7 +33,7 @@ const Mission1: FC<Mission1Props> = () => {
 
       // Image animation from right
       gsap.fromTo(
-        "#mission1 .mission1-image-wrapper",
+        "#commitment .commitment-image-wrapper",
         { x: 80, opacity: 0 },
         {
           x: 0,
@@ -49,7 +49,7 @@ const Mission1: FC<Mission1Props> = () => {
 
       // Decorative elements
       gsap.fromTo(
-        "#mission1 .mission1-tag",
+        "#commitment .commitment-tag",
         { scale: 0, opacity: 0 },
         {
           scale: 1,
@@ -68,14 +68,14 @@ const Mission1: FC<Mission1Props> = () => {
   );
 
   return (
-    <section id="mission1" ref={container}>
+    <section id="commitment" ref={container}>
       <div className="container">
-        <div className="mission1-grid">
+        <div className="commitment-grid">
           {/* Left: Content */}
-          <div className="mission1-content">
-            <div className="mission1-tag">Our Mission</div>
-            <h2>Empowering Technology and Globally</h2>
-            <div className="mission1-text">
+          <div className="commitment-content">
+            <div className="commitment-tag">Our Commitment</div>
+            <h2>Empowering Technology Globally</h2>
+            <div className="commitment-text">
               <p>
                 We help clients achieve <strong>clarity and structure</strong> in
                 their IT projects and digital initiatives. Alongside this, we
@@ -83,7 +83,7 @@ const Mission1: FC<Mission1Props> = () => {
                 that can manage and sustain meaningful technological work.
               </p>
             </div>
-            <div className="mission1-highlights">
+            <div className="commitment-highlights">
               <div className="highlight-item">
                 <div className="highlight-number">01</div>
                 <div className="highlight-text">
@@ -102,14 +102,14 @@ const Mission1: FC<Mission1Props> = () => {
           </div>
 
           {/* Right: Image */}
-          <div className="mission1-image-wrapper">
+          <div className="commitment-image-wrapper">
             <div className="image-container">
               <Image
                 src={missionImage}
-                alt="Our Mission"
+                alt="Our Commitment"
                 width={600}
                 height={700}
-                className="mission1-image"
+                className="commitment-image"
                 style={{
                   width: '100%',
                   height: '100%',
@@ -126,4 +126,4 @@ const Mission1: FC<Mission1Props> = () => {
   );
 };
 
-export default Mission1;
+export default Commitment;

@@ -1,11 +1,11 @@
-#mission1 {
+#commitment {
     background: var(--bg-base);
     padding: 120px 0;
     position: relative;
     overflow: hidden;
 }
 
-#mission1::before {
+#commitment::before {
     content: '';
     position: absolute;
     top: 0;
@@ -16,8 +16,8 @@
     pointer-events: none;
 }
 
-/* Mission1 Grid */
-.mission1-grid {
+/* Commitment Grid */
+.commitment-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
@@ -26,14 +26,14 @@
     z-index: 1;
 }
 
-/* Mission1 Content - Left Side */
-.mission1-content {
+/* Commitment Content - Left Side */
+.commitment-content {
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
 
-.mission1-tag {
+.commitment-tag {
     display: inline-block;
     background: linear-gradient(135deg, var(--accent-color, #5cb2b3), #4a9fa0);
     color: white;
@@ -47,7 +47,7 @@
     box-shadow: 0 4px 15px rgba(92, 178, 179, 0.3);
 }
 
-.mission1-content h2 {
+.commitment-content h2 {
     font-size: 2.75rem;
     font-weight: 700;
     color: var(--text-primary);
@@ -55,24 +55,24 @@
     margin: 0;
 }
 
-.mission1-text {
+.commitment-text {
     margin-top: 10px;
 }
 
-.mission1-text p {
+.commitment-text p {
     font-size: 1.15rem;
     line-height: 1.9;
     color: var(--text-secondary);
     margin: 0;
 }
 
-.mission1-text strong {
+.commitment-text strong {
     color: var(--accent-color, #5cb2b3);
     font-weight: 700;
 }
 
-/* Mission1 Highlights */
-.mission1-highlights {
+/* Commitment Highlights */
+.commitment-highlights {
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -118,8 +118,8 @@
     margin: 0;
 }
 
-/* Mission1 Image - Right Side */
-.mission1-image-wrapper {
+/* Commitment Image - Right Side */
+.commitment-image-wrapper {
     position: relative;
     height: 100%;
     min-height: 600px;
@@ -134,14 +134,14 @@
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
-.mission1-image {
+.commitment-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
 }
 
-.image-container:hover .mission1-image {
+.image-container:hover .commitment-image {
     transform: scale(1.05);
 }
 
@@ -176,47 +176,47 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
-    #mission1 {
+    #commitment {
         padding: 100px 0;
     }
 
-    .mission1-grid {
+    .commitment-grid {
         gap: 60px;
     }
 
-    .mission1-content h2 {
+    .commitment-content h2 {
         font-size: 2.25rem;
     }
 
-    .mission1-text p {
+    .commitment-text p {
         font-size: 1.05rem;
     }
 
-    .mission1-image-wrapper {
+    .commitment-image-wrapper {
         min-height: 500px;
     }
 }
 
 @media screen and (max-width: 900px) {
-    #mission1 {
+    #commitment {
         padding: 80px 0;
     }
 
-    .mission1-grid {
+    .commitment-grid {
         grid-template-columns: 1fr;
         gap: 50px;
     }
 
-    .mission1-content h2 {
-        font-size: 2rem;
+    .commitment-content h2 {
+        fontSize: 2rem;
     }
 
-    .mission1-text p {
+    .commitment-text p {
         font-size: 1rem;
         line-height: 1.8;
     }
 
-    .mission1-highlights {
+    .commitment-highlights {
         gap: 20px;
     }
 
@@ -232,43 +232,43 @@
         font-size: 1.05rem;
     }
 
-    .mission1-image-wrapper {
+    .commitment-image-wrapper {
         min-height: 450px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    #mission1 {
+    #commitment {
         padding: 60px 0;
     }
 
-    .mission1-grid {
+    .commitment-grid {
         gap: 40px;
     }
 
-    .mission1-tag {
+    .commitment-tag {
         font-size: 0.75rem;
         padding: 6px 16px;
     }
 
-    .mission1-content {
+    .commitment-content {
         gap: 20px;
     }
 
-    .mission1-content h2 {
+    .commitment-content h2 {
         font-size: 1.75rem;
     }
 
-    .mission1-text {
+    .commitment-text {
         margin-top: 5px;
     }
 
-    .mission1-text p {
+    .commitment-text p {
         font-size: 0.95rem;
         line-height: 1.7;
     }
 
-    .mission1-highlights {
+    .commitment-highlights {
         gap: 15px;
         margin-top: 15px;
     }
@@ -295,7 +295,7 @@
         font-size: 0.9rem;
     }
 
-    .mission1-image-wrapper {
+    .commitment-image-wrapper {
         min-height: 400px;
     }
 
@@ -309,7 +309,7 @@
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-    .mission1-image,
+    .commitment-image,
     .image-overlay,
     .highlight-item {
         transition: none;

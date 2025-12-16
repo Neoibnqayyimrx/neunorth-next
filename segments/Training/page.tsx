@@ -1,32 +1,31 @@
-// Academy.tsx
 import React from 'react';
 import { FaGraduationCap, FaChartLine, FaCertificate, FaArrowRight } from 'react-icons/fa';
-import './Academy.css';
+import './Training.css';
 
-const Academy: React.FC = () => {
+const Training: React.FC = () => {
   return (
-    <section className="academy-section">
-      <div className="academy-container">
-        <div className="academy-image">
+    <section className="training-section">
+      <div className="training-container">
+        <div className="training-image">
           <img 
             src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80" 
             alt="Learning and development" 
           />
         </div>
         
-        <div className="academy-content">
-          <h2 className="academy-title">Academy & Training</h2>
-          <p className="academy-subtitle">
+        <div className="training-content">
+          <h2 className="training-title">Training & Development</h2>
+          <p className="training-subtitle">
             Empower your skills, accelerate your growth
           </p>
-          <p className="academy-description">
-            Our comprehensive academy provides world-class training programs 
+          <p className="training-description">
+            Our comprehensive training program provides world-class training programs 
             designed to help you master new skills and advance your career. 
             Learn from industry experts and gain practical knowledge that 
             makes a difference.
           </p>
           
-          <div className="academy-features">
+          <div className="training-features">
             <div className="feature-item">
               <FaGraduationCap className="feature-icon" />
               <div>
@@ -52,7 +51,7 @@ const Academy: React.FC = () => {
             </div>
           </div>
           
-          <button className="academy-cta">
+          <button className="training-cta">
             Explore Courses
             <FaArrowRight className="cta-icon" />
           </button>
@@ -62,4 +61,4 @@ const Academy: React.FC = () => {
   );
 };
 
-export default Academy;
+export default Training;

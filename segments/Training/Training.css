@@ -1,12 +1,10 @@
-/* Academy.css */
-.academy-section {
+.training-section {
   width: 100%;
   padding: 80px 20px;
   position: relative;
 }
 
-
-.academy-container {
+.training-container {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -17,13 +15,13 @@
   z-index: 2;
 }
 
-.academy-content {
+.training-content {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.academy-title {
+.training-title {
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   color: var(--text-color);
@@ -31,21 +29,21 @@
   line-height: 1.2;
 }
 
-.academy-subtitle {
+.training-subtitle {
   font-size: 20px;
   color: var(--primary);
   margin: 0;
   font-weight: 500;
 }
 
-.academy-description {
+.training-description {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-muted);
   margin: 0;
 }
 
-.academy-features {
+.training-features {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -90,7 +88,7 @@
   line-height: 1.6;
 }
 
-.academy-cta {
+.training-cta {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -107,12 +105,12 @@
   margin-top: 12px;
 }
 
-.academy-cta:hover {
+.training-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(92, 178, 179, 0.4);
 }
 
-.academy-cta:active {
+.training-cta:active {
   transform: translateY(0);
 }
 
@@ -121,11 +119,11 @@
   transition: transform 0.3s ease;
 }
 
-.academy-cta:hover .cta-icon {
+.training-cta:hover .cta-icon {
   transform: translateX(5px);
 }
 
-.academy-image {
+.training-image {
   width: 100%;
   height: 100%;
   min-height: 500px;
@@ -136,7 +134,7 @@
   position: relative;
 }
 
-.academy-image::before {
+.training-image::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -145,7 +143,7 @@
   pointer-events: none;
 }
 
-.academy-image img {
+.training-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -154,12 +152,12 @@
 
 /* Responsive Design */
 @media screen and (max-width: 968px) {
-  .academy-container {
+  .training-container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
   
-  .academy-image {
+  .training-image {
     max-height: 400px;
     min-height: 400px;
   }
@@ -170,19 +168,19 @@
 }
 
 @media screen and (max-width: 768px) {
-  .academy-section {
+  .training-section {
     padding: 60px 20px;
   }
   
-  .academy-subtitle {
+  .training-subtitle {
     font-size: 18px;
   }
   
-  .academy-description {
+  .training-description {
     font-size: 15px;
   }
   
-  .academy-cta {
+  .training-cta {
     width: 100%;
     justify-content: center;
     padding: 14px 28px;
@@ -197,7 +195,7 @@
     font-size: 16px;
   }
   
-  .academy-image {
+  .training-image {
     min-height: 300px;
   }
 }

@@ -1,7 +1,7 @@
 
  
 import About from "@/segments/About/page";
-import Academy from "@/segments/Academy/page";
+import Training from "@/segments/Training/page";
 import Achievement from "@/segments/Achievement/page";
 import Careers from "@/segments/Careers/page";
 import CaseStudies from "@/segments/CaseStudies/page";
@@ -19,7 +19,7 @@ function App() {
     <CaseStudies />
     <Contact />
     <Careers />
-    <Academy />
+    <Training />
 
     </>
      
