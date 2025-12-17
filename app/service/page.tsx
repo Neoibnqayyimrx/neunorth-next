@@ -71,6 +71,10 @@ export default function ServicesPage() {
       <HeroSection
         title="Our Services"
         description="Expert IT services and disciplined project management supporting organizations from strategy through execution."
+        image={{
+            src: "/assets/blog1.jpg", // Your image path
+            alt: "Join our tech team",
+          }}
       />
       <OurServices />
 

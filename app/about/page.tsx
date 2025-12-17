@@ -17,6 +17,10 @@ export default function AboutPage() {
         <HeroSection
           title="About Us"
           description="Your partner for project and digital delivery."
+          image={{
+            src: "/assets/blog1.jpg", // Your image path
+            alt: "Join our tech team",
+          }}
         />
       </div>
       

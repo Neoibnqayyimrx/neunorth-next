@@ -13,6 +13,7 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 import HeroSection from "@/components/PageSections/Heros/page";
+import GlobalContacts from "@/components/PageSections/GlobalContacts/page";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,55 +86,14 @@ const ContactPage: FC<ContactPageProps> = () => {
         title="Contact Us"
         description="Have a project in mind or need expert advice? We're here to help with.
          personalized consultations and innovative solutions."
-        image={{
-          src: "/assets/blog3.jpg",
-        }}
+       image={{
+            src: "/assets/blog1.jpg", // Your image path
+            alt: "Join our tech team",
+          }}
       />
-      {/* Map Section */}
-      <section className="map-section">
-        <div className="container">
-          <div className="section-header">
-            <h3 className="subtitle">Our Headquarters</h3>
-            <h2>Visit Our Innovation Hub</h2>
-            <p className="description">
-              Located in the heart of the tech district, our office is designed
-              for creativity, collaboration, and breakthrough thinking.
-            </p>
-          </div>
-
-          <div className="map-container">
-            <div className="map-placeholder">
-              {/* Google Maps placeholder */}
-              <div className="map-overlay">
-                <h4>Tech Innovation Hub</h4>
-                <p>123 Innovation Street, Tech City, TC 10001</p>
-                <div className="map-details">
-                  <div className="map-info">
-                    <span className="label">Parking:</span>
-                    <span className="value">Available on-site</span>
-                  </div>
-                  <div className="map-info">
-                    <span className="label">Public Transport:</span>
-                    <span className="value">5 min from Metro Station</span>
-                  </div>
-                </div>
-                <button
-                  className="btn primary map-btn"
-                  onClick={() =>
-                    window.open("https://maps.google.com", "_blank")
-                  }
-                >
-                  <FaMapMarkerAlt size={18} />
-                  <span>Open in Google Maps</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Imported Contact Component (Contains Form & Contact Details) */}
+      
       <Contact />
+      <GlobalContacts />
     </div>
   );
 };

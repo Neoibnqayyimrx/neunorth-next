@@ -1,0 +1,361 @@
+/* Flip Cards Section */
+.flipcards-section {
+  padding: 80px 0;
+  background-color: var(--bg-base);
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.flipcards-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.flipcards-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.flipcards-subtitle {
+  font-size: 18px;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Cards Grid */
+.flipcards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+/* Flip Card Wrapper */
+.flipcard-wrapper {
+  perspective: 1200px;
+  height: 450px;
+  cursor: pointer;
+}
+
+/* Card Inner Container - GSAP animates this */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+/* Card Sides - Common Styles */
+.flipcard-front,
+.flipcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Front Card - WITH IMAGE */
+.flipcard-front {
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  transform: rotateY(0deg);
+  transition: box-shadow 0.3s ease;
+}
+
+.flipcard-front:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.flipcard-image-container {
+  position: relative;
+  height: 55%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.flipcard-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.flipcard-wrapper:hover .flipcard-image {
+  transform: scale(1.08);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  pointer-events: none;
+}
+
+.flipcard-content {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-white);
+}
+
+.flipcard-title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.flipcard-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Back Card - NO IMAGE, ONLY TEXT */
+.flipcard-back {
+  background: var(--border-color);
+  color: var(--color-white);
+  transform: rotateY(180deg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flipcard-back-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-header {
+  margin-bottom: 24px;
+}
+
+.back-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-white);
+}
+
+.back-description {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 8px;
+}
+
+.back-description::-webkit-scrollbar {
+  width: 4px;
+}
+
+.back-description::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.back-description::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.description-paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-white);
+  margin-bottom: 16px;
+}
+
+.description-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Flip Buttons */
+.flip-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: none;
+  color: var(--bg-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.flip-button:hover {
+  background: var(--primary);
+  color: var(--color-white);
+  transform: scale(1.08);
+}
+
+.flip-button:active {
+  transform: scale(0.95);
+}
+
+.flip-button.back {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.flip-button.back:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.flip-icon {
+  font-size: 18px;
+}
+
+/* Accessibility */
+.flip-button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.flipcard-wrapper:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .flipcards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .flipcards-section {
+    padding: 60px 0;
+  }
+  
+  .flipcards-header {
+    margin-bottom: 40px;
+  }
+  
+  .flipcards-title {
+    font-size: 32px;
+  }
+  
+  .flipcards-subtitle {
+    font-size: 16px;
+  }
+  
+  .flipcards-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+  
+  .flipcard-wrapper {
+    height: 450px;
+  }
+  
+  .flipcard-content {
+    padding: 20px;
+  }
+  
+  .flipcard-title {
+    font-size: 18px;
+  }
+  
+  .flipcard-back {
+    padding: 28px;
+  }
+  
+  .back-title {
+    font-size: 22px;
+  }
+  
+  .description-paragraph {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flipcards-section {
+    padding: 40px 0;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .flipcards-title {
+    font-size: 28px;
+  }
+  
+  .flipcards-subtitle {
+    font-size: 15px;
+  }
+  
+  .flipcard-wrapper {
+    height: 450px;
+  }
+  
+  .flip-button {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .flip-icon {
+    font-size: 16px;
+  }
+  
+  .flipcard-back {
+    padding: 24px;
+  }
+}
+
+/* Prevent flickering and ensure smooth 3D */
+.flip-card-inner,
+.flipcard-front,
+.flipcard-back {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Disable text selection during flip */
+.flipcard-wrapper {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Allow text selection on back side */
+.flipcard-back {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+}

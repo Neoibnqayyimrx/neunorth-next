@@ -24,6 +24,10 @@ const Academy = () => {
       <HeroSection
         title="Neunorth Academy"
         description="Training the next generation of digital and project talent."
+        image={{
+            src: "/assets/blog1.jpg", // Your image path
+            alt: "Join our tech team",
+          }}
       />
 
       {/* Imported Reconfigurable Prop */}

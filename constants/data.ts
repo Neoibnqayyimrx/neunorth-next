@@ -7,6 +7,9 @@ import {
   FaLinkedin,
   FaYoutube,
   FaCode,
+  FaBriefcase,      
+  FaClock,        
+  FaPhone,
   FaHandshake,
   FaLightbulb,
   FaRocket,
@@ -607,4 +610,26 @@ export const socialProof = {
     },
   ],
 };
+
+// Add this to your existing constants/data.ts file
+export const careerInfo = [
+  {
+    icon: FaBriefcase, // You'll need to import/create this icon
+    title: "Application Process",
+    description: "What to expect",
+    value: "5-7 business days response time"
+  },
+  {
+    icon: FaClock,
+    title: "Working Hours",
+    description: "Our office hours",
+    value: "Mon-Fri, 9 AM - 6 PM"
+  },
+  {
+    icon: FaPhone,
+    title: "HR Contact",
+    description: "For application queries",
+    value: "hr@company.com"
+  }
+];
 
