@@ -103,14 +103,12 @@ const Products = () => {
   const currentSlide = currentSlides[0];
   const totalSlides = Object.keys(sustainabilityData).length;
 
-  // Trigger animation when tab changes
   useEffect(() => {
     setIsAnimating(false);
     const timeout = setTimeout(() => setIsAnimating(true), 50);
     return () => clearTimeout(timeout);
   }, [activeTab]);
 
-  // Progress bar animation
   useEffect(() => {
     if (progressIntervalRef.current) {
       clearInterval(progressIntervalRef.current);
@@ -118,8 +116,8 @@ const Products = () => {
 
     if (isPlaying) {
       setProgress(0);
-      const duration = 5000; // 5 seconds
-      const interval = 50; // Update every 50ms
+      const duration = 5000; 
+      const interval = 50; 
       const increment = (interval / duration) * 100;
 
       progressIntervalRef.current = setInterval(() => {

@@ -43,10 +43,8 @@ export default function NigeriaMap() {
   const [customIcons, setCustomIcons] = useState<Map<string, L.DivIcon>>(new Map());
 
   useEffect(() => {
-    // Only run on client side
     setIsClient(true);
 
-    // Fix for default icons in Leaflet
     if (typeof window !== 'undefined') {
       delete (L.Icon.Default.prototype as any)._getIconUrl;
       L.Icon.Default.mergeOptions({
@@ -55,7 +53,6 @@ export default function NigeriaMap() {
         shadowUrl: '/leaflet/images/marker-shadow.png',
       });
 
-      // Create Nigeria icon
       const nigeriaMarker = L.divIcon({
         html: `
           <div class="nigeria-marker">
@@ -70,7 +67,7 @@ export default function NigeriaMap() {
       });
       setNigeriaIcon(nigeriaMarker);
 
-      // Create custom icons for locations
+    
       const icons = new Map<string, L.DivIcon>();
       LOCATIONS.forEach(loc => {
         const icon = L.divIcon({
@@ -89,7 +86,7 @@ export default function NigeriaMap() {
     }
   }, []);
 
-  // Don't render anything on server
+  
   if (!isClient) {
     return (
       <div 
@@ -109,7 +106,7 @@ export default function NigeriaMap() {
     );
   }
 
-  // Create lines from Nigeria to each location
+  
   const polylines = LOCATIONS.map(loc => ({
     positions: [NIGERIA_COORDS, loc.coords] as [[number, number], [number, number]],
     key: loc.name
@@ -149,7 +146,7 @@ export default function NigeriaMap() {
             <Popup>
               <div className="nigeria-popup">
                 <strong>Nigeria Hub</strong>
-                <span className="popup-subtitle">Headquarters</span>
+                <span className="popup-subtitle">Neunorth</span>
               </div>
             </Popup>
           </Marker>

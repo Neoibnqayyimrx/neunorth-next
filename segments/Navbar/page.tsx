@@ -1,9 +1,9 @@
-// components/Navbar.tsx
-'use client'; // Required for useState, useEffect in App Router
+
+'use client'; 
 
 import { useState, useEffect, useMemo } from 'react';
-import Link from 'next/link'; // Changed from 'react-scroll'
-import { usePathname } from 'next/navigation'; // Added for active state
+import Link from 'next/link'; 
+import { usePathname } from 'next/navigation'; 
 import gsap from 'gsap';
 import { CgMenuRight } from 'react-icons/cg';
 
@@ -17,20 +17,19 @@ import './Navbar.css';
 const Navbar: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname(); // Get current path for active state
+  const pathname = usePathname(); 
 
-  // Handle scroll-based navbar background & blur
+
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 200);
   };
 
-  // Memoized scroll listener (correct use of useMemo + useEffect)
+  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // GSAP entrance animation on mount
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.5 });
 

@@ -5,10 +5,10 @@
 }
 
 .logo img {
-    height: 2rem; /* adjust size as needed */
+    height: 2rem; 
     width: auto;
 }
 
 .logo:hover {
-    color: var(--primary); /* If your logo has text next to it */
+    color: var(--primary); 
 }

@@ -29,7 +29,7 @@ const Achievement = () => {
             setTimeout(() => {
               setClients(70);
               setSatisfaction(10);
-              setProjects(100); // Set to a number, we'll format it as ∞
+              setProjects(100); 
             }, 1000);
           },
         },

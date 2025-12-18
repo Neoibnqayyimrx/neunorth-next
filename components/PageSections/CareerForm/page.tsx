@@ -10,7 +10,6 @@ import "./CareerForm.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Define TypeScript interfaces for career form
 interface CareerInfoItem {
   icon: FC<{ className?: string }>;
   title: string;
@@ -66,7 +65,7 @@ const CareerForm: FC<CareerFormProps> = ({ jobTitle, jobId }) => {
     <section id="career-form" ref={container}>
       <div className="container">
         <div className="career-info-wrapper">
-          {/* You'll need to create careerInfo constant similar to contactInfo */}
+        
           {careerInfo.map((info: CareerInfoItem, index: number) => {
             const IconComponent = info.icon;
             return (

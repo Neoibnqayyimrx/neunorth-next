@@ -11,7 +11,7 @@ const Careers = () => {
           title="Join Us"
           description="Build a Tech-driven Career with Us."
           image={{
-            src: "/assets/blog1.jpg", // Your image path
+            src: "/assets/blog1.jpg", 
             alt: "Join our tech team",
           }}
         />

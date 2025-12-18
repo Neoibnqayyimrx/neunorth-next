@@ -1,5 +1,5 @@
-// components/Service.tsx  (or app/components/Service.tsx)
-'use client'; // Required for useRef, useGSAP, and client-side GSAP
+
+'use client'; 
 
 import "./Service.css";
 import { services } from "@/constants/data";
@@ -11,10 +11,9 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
 
-// Register ScrollTrigger once
+
 gsap.registerPlugin(ScrollTrigger);
 
-// Type for your services data
 interface ServiceItem {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;

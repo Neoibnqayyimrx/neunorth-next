@@ -31,7 +31,6 @@ const Vision: FC<VisionProps> = () => {
         }
       );
 
-      // Image animation from right
       gsap.fromTo(
         "#vision .vision-image-wrapper",
         { x: 80, opacity: 0 },
@@ -47,7 +46,7 @@ const Vision: FC<VisionProps> = () => {
         }
       );
 
-      // Decorative elements
+    
       gsap.fromTo(
         "#vision .vision-tag",
         { scale: 0, opacity: 0 },

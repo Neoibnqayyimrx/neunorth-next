@@ -38,20 +38,19 @@ const HeroSection: React.FC = () => {
       <BoxAnimation />
       <div className="container">
         <div>
-          <h4 className="hero-subtitle">Welcome to Neunorth</h4>
-
-          <h1 className="hero-title">Project leadership and digital delivery for global clients. </h1>
-
+          <h1 className="hero-title">
+            Project leadership and digital delivery for global clients.{" "}
+          </h1>
           <p className="hero-description">
             We help organisations plan, build, and deliver projects through
             structured management, technical skills, and digital support.
           </p>
 
-         <div className="buttons-wrapper">
+          <div className="buttons-wrapper">
             <Link href="/contact" className="btn primary">
-              Schedule a call < FaPhoneAlt />
+              Schedule a call <FaPhoneAlt />
             </Link>
-             <Link href="/projects" className="btn">
+            <Link href="/projects" className="btn">
               Our global partners <FaHandshake />
             </Link>
           </div>

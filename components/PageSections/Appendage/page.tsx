@@ -58,7 +58,6 @@ const Appendage: FC<AppendageProps> = ({
         }
       );
 
-      // Image animation from right
       gsap.fromTo(
         `#${id} .appendage-image-wrapper`,
         { x: 80, opacity: 0 },
@@ -74,7 +73,6 @@ const Appendage: FC<AppendageProps> = ({
         }
       );
 
-      // Decorative elements animation
       if (tag) {
         gsap.fromTo(
           `#${id} .appendage-tag`,

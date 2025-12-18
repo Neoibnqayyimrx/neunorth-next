@@ -611,10 +611,10 @@ export const socialProof = {
   ],
 };
 
-// Add this to your existing constants/data.ts file
+
 export const careerInfo = [
   {
-    icon: FaBriefcase, // You'll need to import/create this icon
+    icon: FaBriefcase, 
     title: "Application Process",
     description: "What to expect",
     value: "5-7 business days response time"

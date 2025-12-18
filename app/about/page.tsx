@@ -18,7 +18,7 @@ export default function AboutPage() {
           title="About Us"
           description="Your partner for project and digital delivery."
           image={{
-            src: "/assets/blog1.jpg", // Your image path
+            src: "/assets/blog1.jpg", 
             alt: "Join our tech team",
           }}
         />

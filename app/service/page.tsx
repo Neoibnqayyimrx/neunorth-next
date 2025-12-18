@@ -19,10 +19,10 @@ export default function ServicesPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
-  // Hero animation
+  
   useGSAP(
     () => {
-      // Animate title letters
+    
       const title = titleRef.current;
       if (title) {
         const chars = title.querySelectorAll(".char");
@@ -42,21 +42,21 @@ export default function ServicesPage() {
         }
       }
 
-      // Hero fade in
+      
       gsap.fromTo(
         ".services-hero",
         { opacity: 0 },
         { opacity: 1, duration: 1.5, ease: "power2.out" }
       );
 
-      // Subtitle animation
+      
       gsap.fromTo(
         ".hero-subtitle",
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 1, delay: 0.3 }
       );
 
-      // Description animation
+      
       gsap.fromTo(
         ".hero-description",
         { opacity: 0, y: 30 },
@@ -72,13 +72,13 @@ export default function ServicesPage() {
         title="Our Services"
         description="Expert IT services and disciplined project management supporting organizations from strategy through execution."
         image={{
-            src: "/assets/blog1.jpg", // Your image path
+            src: "/assets/blog1.jpg", 
             alt: "Join our tech team",
           }}
       />
       <OurServices />
 
-      {/* Our Mission Section - Fixed to match Services page structure */}
+      {/* Our Mission Section */}
       <section id="service-section">
         <div className="service-item hero">
           <div className="image-container">

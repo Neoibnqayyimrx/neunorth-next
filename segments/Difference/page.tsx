@@ -42,7 +42,6 @@ const Difference: FC<DifferenceProps> = () => {
 
   useGSAP(
     () => {
-      // Difference section animations
       gsap.fromTo(
         "#difference .difference-header h2",
         { y: -30, opacity: 0 },
@@ -75,7 +74,6 @@ const Difference: FC<DifferenceProps> = () => {
         }
       );
 
-      // Approach section animations
       gsap.fromTo(
         "#difference .approach-header h2",
         { y: -30, opacity: 0 },

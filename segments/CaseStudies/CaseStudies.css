@@ -1,9 +1,10 @@
-/* Case Studies Section - Improved to sync with global.css */
+/* Case Studies Section */
 #case-studies {
   position: relative;
   background-image: url("@/public/assets/bg-1.svg");
   background-color: var(--bg-secondary);
   background-blend-mode: overlay;
+  margin-bottom: 50px;
 }
 
 #case-studies .spotlight {
@@ -27,7 +28,7 @@
   margin-top:  40px;
 }
 
-/* Section Header - Sync with global.css */
+/* Section Header */
 #case-studies .section-header h2 {
   font-size: clamp(28px, 5vw, 34px);
   font-weight: 600;
@@ -36,14 +37,29 @@
   color: var(--text-color);
 }
 
-#case-studies .section-header h3 {
-  font-size: 18px;
-  font-weight: 500;
-  margin: 10px 0;
-  color: var(--primary);
+#case-studies .header-decoration {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--accent-color, #5cb2b3), transparent);
+    margin: 20px auto 0;
+    border-radius: 2px;
+    animation: glow 2s ease-in-out infinite;
 }
 
-/* Card Styles - Improved */
+#case-studies .section-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  padding: 8px 24px;
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  display: inline-block;
+}
+
+/* Card Styles */
 #case-studies .case-study-card {
   height: 100%;
   min-height: 320px;
@@ -183,7 +199,7 @@
   font-weight: 500;
 }
 
-/* Button Styles - Improved */
+/* Button Styles */
 #case-studies .details-button {
   width: 100%;
   background: transparent;
@@ -221,7 +237,7 @@
   transform: translateX(4px);
 }
 
-/* Modal Styles - Improved */
+/* Modal Styles */
 .case-study-modal-overlay {
   position: fixed;
   top: 0;

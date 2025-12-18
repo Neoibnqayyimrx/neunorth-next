@@ -1,4 +1,4 @@
-/* About Page CSS - Improved Version */
+/* About Page CSS */
 #about .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -39,7 +39,7 @@
   transform: translateX(-50%);
 }
 
-/* Hero Section - Improved */
+/* Hero Section  */
 #about .vision-item.hero {
   background-size: cover;
   color: var(--color-white);
@@ -112,7 +112,7 @@
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Country Cards - Improved with better global.css integration */
+/* Country Cards */
 #about .country-cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -237,7 +237,7 @@
   background: rgba(92, 178, 179, 0.1);
 }
 
-/* Why Neunorth Section - Improved */
+/* Why Neunorth Section */
 #about .why-neunorth-section {
   position: relative;
   margin-top: 50px;
@@ -295,7 +295,7 @@
   line-height: 1.6;
 }
 
-/* Responsive Design - Improved */
+/* Responsive Design */
 @media screen and (max-width: 1000px) {
   #about .vision-item.hero {
     grid-template-columns: 1fr;

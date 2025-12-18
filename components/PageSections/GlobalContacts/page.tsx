@@ -157,7 +157,7 @@ const GlobalContacts: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
-              key={activeTab} // This key triggers animation when activeTab changes
+              key={activeTab} 
             >
               <Image
                 src={partnerImages[activeTab as keyof typeof partnerImages]}

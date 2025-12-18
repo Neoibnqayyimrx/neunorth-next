@@ -47,7 +47,7 @@ const Commitment: FC<CommitmentProps> = () => {
         }
       );
 
-      // Decorative elements
+      
       gsap.fromTo(
         "#commitment .commitment-tag",
         { scale: 0, opacity: 0 },

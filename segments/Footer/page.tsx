@@ -10,7 +10,7 @@ import { useRef } from "react";
 import NeunorthLogo from "@/components/NeunorthLogo/page";
 import { FaArrowRight } from "react-icons/fa6";
 
-// Define types for your data
+
 interface SubRoute {
   id: string;
   title: string;
@@ -49,7 +49,6 @@ const Footer = () => {
     { scope: container }
   );
 
-  // Type-safe handler for scroll-based navigation
   const handleScrollTo = (id: string) => {
     if (typeof window !== 'undefined') {
       const element = document.getElementById(id);
@@ -65,12 +64,11 @@ const Footer = () => {
       <div className="gradient-bar">
         <div className="gradient-bar-content">
           <a 
-            href="tel:+1234567890" 
+            href="tel:+23431830866" 
             className="call-to-action"
             onClick={(e) => {
               e.preventDefault();
-              // Add your phone number handling logic here
-              window.location.href = 'tel:+1234567890';
+              window.location.href = 'tel:+23431830866';
             }}
           >
             <span className="call-text">Give Us a Call</span>

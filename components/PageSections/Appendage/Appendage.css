@@ -16,7 +16,7 @@
     pointer-events: none;
 }
 
-/* Appendage Grid */
+
 .appendage-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -34,7 +34,7 @@
     direction: ltr;
 }
 
-/* Appendage Content - Left Side */
+
 .appendage-content {
     display: flex;
     flex-direction: column;
@@ -79,7 +79,7 @@
     font-weight: 700;
 }
 
-/* Appendage Highlights */
+
 .appendage-highlights {
     display: flex;
     flex-direction: column;
@@ -126,7 +126,6 @@
     margin: 0;
 }
 
-/* Appendage Image - Right Side */
 .appendage-image-wrapper {
     position: relative;
     height: 100%;
@@ -153,7 +152,7 @@
     transform: scale(1.05);
 }
 
-/* Image Overlay */
+
 .image-overlay {
     position: absolute;
     top: 0;
@@ -169,7 +168,7 @@
     opacity: 0.7;
 }
 
-/* Decorative Element */
+
 .image-decoration {
     position: absolute;
     bottom: -20px;
@@ -324,7 +323,7 @@
     }
 }
 
-/* Accessibility */
+
 @media (prefers-reduced-motion: reduce) {
     .appendage-image,
     .image-overlay,

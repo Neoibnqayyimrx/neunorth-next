@@ -30,7 +30,6 @@
   min-height: 500px;
 }
 
-/* Next.js Image compatibility */
 #service-section .service-item.hero .image-container img {
   width: 100%;
   height: 100%;

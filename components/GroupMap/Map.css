@@ -19,12 +19,11 @@
   color: var(--text-color);
 }
 
-/* Fix Leaflet default styles for dark theme */
+
 .leaflet-container {
   background: var(--bg-secondary);
 }
 
-/* Dark mode tile layer enhancement */
 .leaflet-tile-pane {
   filter: brightness(0.8) contrast(1.1);
 }
@@ -48,7 +47,7 @@
   color: var(--color-white) !important;
 }
 
-/* Nigeria hub marker animation */
+
 .nigeria-marker {
   animation: pulse 2s infinite;
   cursor: pointer;
@@ -66,7 +65,6 @@
   border: none !important;
 }
 
-/* Nigeria popup styling */
 .nigeria-popup {
   display: flex;
   flex-direction: column;
@@ -82,7 +80,7 @@
   font-family: "Inter", sans-serif;
 }
 
-/* Custom company markers */
+
 .custom-div-icon {
   background: transparent !important;
   border: none !important;
@@ -123,7 +121,7 @@
   filter: brightness(1.2);
 }
 
-/* Popup styling */
+
 .leaflet-popup-content-wrapper {
   border-radius: 8px !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
@@ -222,7 +220,7 @@
   color: var(--primary);
 }
 
-/* Popup tip styling */
+
 .leaflet-popup-tip {
   background: var(--bg-accent) !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
@@ -231,7 +229,7 @@
   border-left: none !important;
 }
 
-/* Zoom controls styling */
+
 .leaflet-control-zoom {
   border: 1px solid var(--border-color) !important;
   background: var(--bg-accent) !important;
@@ -261,12 +259,12 @@
   border-bottom: none !important;
 }
 
-/* Enhanced lines styling */
+
 .leaflet-pane.leaflet-overlay-pane svg path.leaflet-interactive {
   filter: drop-shadow(0 2px 4px rgba(92, 178, 179, 0.2));
 }
 
-/* Responsive adjustments */
+
 @media screen and (max-width: 768px) {
   .map-wrapper {
     height: 350px;
@@ -308,14 +306,13 @@
   }
 }
 
-/* Tablet adjustments */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .map-wrapper {
     height: 450px;
   }
 }
 
-/* High contrast mode support */
+
 @media (prefers-contrast: high) {
   .custom-marker {
     border-width: 3px;
@@ -330,7 +327,7 @@
   }
 }
 
-/* Reduced motion support */
+
 @media (prefers-reduced-motion: reduce) {
   .custom-marker,
   .company-link,

@@ -1,6 +1,6 @@
 "use client";
 import { FC, useRef } from "react";
-import Contact from "@/segments/Contact/page"; // Your existing component
+import Contact from "@/segments/Contact/page"; 
 import "./contact.css";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -25,7 +25,7 @@ const ContactPage: FC<ContactPageProps> = () => {
 
   useGSAP(
     () => {
-      // Hero animation
+
       gsap.fromTo(
         ".hero-content h1",
         { y: 50, opacity: 0 },
@@ -44,7 +44,6 @@ const ContactPage: FC<ContactPageProps> = () => {
         { scale: 1, opacity: 1, duration: 0.8, delay: 0.4 }
       );
 
-      // Company info animation
       ScrollTrigger.create({
         trigger: ".company-info",
         start: "top 80%",
@@ -57,7 +56,7 @@ const ContactPage: FC<ContactPageProps> = () => {
         },
       });
 
-      // Map section animation
+  
       ScrollTrigger.create({
         trigger: ".map-section",
         start: "top 80%",
@@ -87,7 +86,7 @@ const ContactPage: FC<ContactPageProps> = () => {
         description="Have a project in mind or need expert advice? We're here to help with.
          personalized consultations and innovative solutions."
        image={{
-            src: "/assets/blog1.jpg", // Your image path
+            src: "/assets/blog1.jpg", 
             alt: "Join our tech team",
           }}
       />

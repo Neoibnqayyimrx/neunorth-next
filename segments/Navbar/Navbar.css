@@ -29,7 +29,7 @@
 #navbar .route-wrapper {
     display: flex;
     align-items: stretch;
-    gap: 1.4rem; /* Adjust spacing between menu items as needed */
+    gap: 1.4rem; 
 }
 
 #navbar .route{

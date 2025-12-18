@@ -46,7 +46,7 @@ const countryLocations = [
   },
 ];
 
-// Country flag mapping - Using string paths without blur placeholder
+
 const countryFlags: Record<string, string> = {
   superlab: "/assets/superlab.svg",
   space: "/assets/space.png",

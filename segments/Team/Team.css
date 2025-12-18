@@ -5,7 +5,6 @@
     padding: 80px 0;
 }
 
-/* Section Header Enhancements */
 #team .section-header {
     text-align: center;
     position: relative;
@@ -31,7 +30,7 @@
     50% { opacity: 1; transform: scaleX(1.2); }
 }
 
-/* Swiper Container */
+
 #team .team-swiper {
     padding: 20px 10px 60px;
     perspective: 1000px;
@@ -42,7 +41,7 @@
     display: flex;
 }
 
-/* Team Card - Compact Design */
+
 #team .team-card {
     background: var(--bg-base);
     overflow: hidden;
@@ -68,7 +67,6 @@
     flex-direction: column;
 }
 
-/* Image Section - Square */
 #team .team-card .top {
     overflow: hidden;
     position: relative;
@@ -89,7 +87,6 @@
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Overlay Effect */
 #team .overlay {
     position: absolute;
     top: 0;
@@ -102,7 +99,6 @@
     pointer-events: none;
 }
 
-/* Bottom Content - Compact */
 #team .team-card .bottom {
     padding: 20px;
     display: flex;
@@ -111,7 +107,7 @@
     flex: 1;
 }
 
-/* Member Name */
+
 #team .team-card .bottom .member-name {
     font-size: 1.15rem;
     font-weight: 700;
@@ -125,7 +121,6 @@
     color: var(--accent-color, #5cb2b3);
 }
 
-/* Member Role */
 #team .team-card .bottom .member-role {
     font-size: 0.85rem;
     color: var(--text-secondary);
@@ -133,7 +128,7 @@
     line-height: 1.4;
 }
 
-/* Focus Tags - Compact */
+
 #team .focus-tags {
     display: flex;
     flex-wrap: wrap;
@@ -156,7 +151,6 @@
     box-shadow: 0 4px 12px rgba(92, 178, 179, 0.3);
 }
 
-/* Card Footer */
 #team .card-footer {
     display: flex;
     align-items: center;
@@ -166,7 +160,7 @@
     gap: 10px;
 }
 
-/* LinkedIn Link */
+
 #team .linkedin-link {
     display: flex;
     align-items: center;
@@ -185,7 +179,6 @@
     box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
 }
 
-/* View Details Button */
 #team .view-details-btn {
     display: flex;
     align-items: center;
@@ -214,7 +207,7 @@
     transform: translateX(4px);
 }
 
-/* Shine Effect */
+
 #team .shine-effect {
     position: absolute;
     top: -50%;
@@ -236,7 +229,7 @@
     transform: translateX(100%) translateY(100%) rotate(45deg);
 }
 
-/* Modal Overlay */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -253,7 +246,7 @@
     overflow-y: auto;
 }
 
-/* Modal Content */
+
 .modal-content {
     background: var(--bg-base);
     border-radius: 1.5rem;
@@ -265,7 +258,6 @@
     overflow-y: auto;
 }
 
-/* Modal Close Button */
 .modal-close {
     position: absolute;
     top: 20px;
@@ -290,7 +282,6 @@
     transform: rotate(90deg);
 }
 
-/* Modal Body */
 .modal-body {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -298,7 +289,6 @@
     padding: 40px;
 }
 
-/* Modal Image */
 .modal-image {
     width: 300px;
     height: 300px;
@@ -313,7 +303,6 @@
     object-fit: cover;
 }
 
-/* Modal Info */
 .modal-info {
     display: flex;
     flex-direction: column;
@@ -335,7 +324,7 @@
     margin: 0;
 }
 
-/* Modal Sections */
+
 .modal-section {
     padding-top: 20px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -357,7 +346,7 @@
     margin: 0;
 }
 
-/* Modal Focus Tags */
+
 .modal-focus-tags {
     display: flex;
     flex-wrap: wrap;
@@ -373,7 +362,7 @@
     font-weight: 500;
 }
 
-/* Modal LinkedIn */
+
 .modal-linkedin {
     display: inline-flex;
     align-items: center;
@@ -396,7 +385,7 @@
     box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
 }
 
-/* Swiper Pagination */
+
 #team .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
@@ -473,7 +462,7 @@
         font-size: 0.8rem;
     }
     
-    /* Disable 3D effects on mobile for better performance */
+    
     #team .team-card {
         transform-style: flat;
     }
@@ -507,7 +496,7 @@
     }
 }
 
-/* Accessibility */
+
 @media (prefers-reduced-motion: reduce) {
     #team .team-card,
     #team .team-image,

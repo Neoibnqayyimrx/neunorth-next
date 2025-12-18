@@ -13,7 +13,6 @@ import Image, { StaticImageData } from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Define TypeScript interfaces
 interface CaseStudy {
   id: number;
   title: string;
@@ -27,7 +26,6 @@ interface CaseStudy {
 }
 
 interface CaseStudiesProps {
-  // Add any props if needed in the future
 }
 
 const CaseStudies: FC<CaseStudiesProps> = () => {
@@ -79,6 +77,7 @@ const CaseStudies: FC<CaseStudiesProps> = () => {
           <div className="section-header">
             <h3>Case Studies</h3>
             <h2>Real Projects, Real Results</h2>
+            <div className="header-decoration"></div>
           </div>
           <Swiper
             className="case-studies-wrapper"

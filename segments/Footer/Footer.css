@@ -4,9 +4,9 @@ footer {
     position: relative;
 }
 
-/* Thick Gradient Bar with CTA */
+
 .gradient-bar {
-    height: 180px; /* Thicker bar to accommodate text */
+    height: 180px; 
     width: 100%;
     background: var(--primary);
     display: flex;
@@ -23,12 +23,12 @@ footer {
     align-items: center;
 }
 
-/* Call to Action Link */
+
 .call-to-action {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: var(--color-white, #ffffff); /* Fallback color */
+    color: var(--color-white);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -36,10 +36,9 @@ footer {
     padding: 8px 16px;
     border-radius: 4px;
     position: relative;
-    z-index: 1; /* Ensure it's above other elements */
+    z-index: 1; 
 }
 
-/* Underline effect on hover */
 .call-to-action::after {
     content: '';
     position: absolute;
@@ -47,10 +46,10 @@ footer {
     left: 50%;
     width: 0;
     height: 2px;
-    background: var(--color-white, #ffffff); /* Use same white variable */
+    background: var(--color-white, #ffffff); 
     transition: all 0.3s ease;
     transform: translateX(-50%);
-    z-index: 2; /* Ensure underline is above the link background */
+    z-index: 2; 
 }
 
 .call-to-action:hover::after {
@@ -64,7 +63,7 @@ footer {
     font-weight: 700;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     position: relative;
-    z-index: 3; /* Ensure text is above everything */
+    z-index: 3;
 }
 
 /* Arrow icon styling */
@@ -72,16 +71,16 @@ footer {
     font-size: 1.8rem;
     transition: transform 0.3s ease;
     position: relative;
-    z-index: 3; /* Ensure arrow is above everything */
+    z-index: 3; 
 }
 
 .call-to-action:hover .arrow-icon {
     transform: translateX(5px);
 }
 
-/* Add a subtle background on hover for better contrast */
+
 .call-to-action:hover {
-    background: rgba(255, 255, 255, 0.1); /* Optional: subtle background on hover */
+    background: rgba(255, 255, 255, 0.1); 
 }
 
 footer .box-wrapper{
@@ -116,7 +115,7 @@ footer .route:hover {
 /* Footer divider */
 .footer-divider {
     height: 1px;
-    background-color: var(--border-color, #e0e0e0);
+    background-color: var(--border-color);
     margin: 20px 0;
     width: 100%;
 }
@@ -223,11 +222,11 @@ footer .route:hover {
     .gradient-bar {
         height: 150px;
         padding: 0 15px;
-        justify-content: center; /* Center on mobile */
+        justify-content: center; 
     }
     
     .gradient-bar-content {
-        justify-content: center; /* Center on mobile */
+        justify-content: center; 
     }
     
     .call-to-action {

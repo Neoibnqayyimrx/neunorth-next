@@ -34,7 +34,6 @@ const Team: FC<TeamProps> = () => {
   
   useGSAP(
     () => {
-      // Header animation
       gsap.fromTo(
         "#team .section-header h3",
         { y: -30, opacity: 0 },
@@ -64,7 +63,6 @@ const Team: FC<TeamProps> = () => {
         }
       );
 
-      // Swiper container animation
       gsap.fromTo(
         "#team .swiper",
         { 
@@ -91,7 +89,7 @@ const Team: FC<TeamProps> = () => {
     setIsModalOpen(true);
     document.body.style.overflow = 'hidden';
     
-    // Animate modal entrance
+    
     gsap.fromTo(
       modalRef.current,
       { opacity: 0, scale: 0.9 },
