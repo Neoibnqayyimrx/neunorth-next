@@ -100,6 +100,10 @@ img {
   -webkit-backdrop-filter: blur(50px);
 }
 
+/* ============================================
+   BUTTON STYLES
+   ============================================ */
+
 .btn {
   padding: 15px 25px;
   font-size: 16px;
@@ -110,11 +114,36 @@ img {
   cursor: pointer;
   transition: var(--transition);
   border: none;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1;
 }
 
 .btn.primary {
   background: var(--primary);
   color: var(--color-white);
+}
+
+.btn.outline {
+  background: var(--bg-secondary);
+  color: var(--text-color);
+  border: 2px solid var(--primary);
+}
+
+.btn.outline:hover {
+  background: var(--primary);
+  color: var(--bg-base);
+}
+
+.btn.secondary {
+  background: var(--bg-accent);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.btn.secondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--primary);
 }
 
 .btn:hover {
@@ -125,6 +154,21 @@ img {
 .btn:active {
   transform: translateY(0);
 }
+
+/* Button size variants */
+.btn.btn-sm {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.btn.btn-lg {
+  padding: 18px 35px;
+  font-size: 18px;
+}
+
+/* ============================================
+   END BUTTON STYLES
+   ============================================ */
 
 .container {
   max-width: 1200px;

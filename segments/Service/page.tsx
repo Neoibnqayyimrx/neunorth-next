@@ -1,16 +1,14 @@
-
 'use client'; 
 
 import "./Service.css";
 import { services } from "@/constants/data";
 import { cssPerfectShape, convertHexToRgba } from "@/util/page";
-import { Link } from "react-scroll";
 import { FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRef } from "react";
-
+import Link from "next/link"; // ✅ Import Next.js Link
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +16,7 @@ interface ServiceItem {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
   description: string;
+  slug: string; // ✅ Make sure slug exists in your data
 }
 
 const Service = () => {
@@ -58,7 +57,8 @@ const Service = () => {
 
         <div className="services">
           {services.map((service: ServiceItem, index: number) => (
-            <div
+            <Link
+              href={`/${service.slug}`} 
               className="blur service"
               style={{
                 background: convertHexToRgba("--bg-secondary", 0.8),
@@ -81,11 +81,11 @@ const Service = () => {
                 </p>
               </div>
               <div className="bottom">
-                <Link to="contact" className="btn primary">
+                <span className="btn primary"> {/* Changed from Link to span */}
                   Explore <FaArrowRightLong />
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

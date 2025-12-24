@@ -75,6 +75,7 @@ const Contact: FC<ContactProps> = () => {
             <span>Let's Connect</span>
           </div>
           <h2>Get In Touch</h2>
+           <div className="header-decoration"></div>
           <p className="description">
             Have a project in mind or need expert advice? We're here to help with 
             personalized consultations and innovative solutions.

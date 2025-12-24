@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Service from "@/segments/Service/page";
 import "./service.css";
 import HeroSection from "@/components/PageSections/Heros/page";
-import Academy from "@/components/PageSections/OurServices/page";
 import VRImage from "@/public/assets/vr.png";
 import Image from "next/image";
 import Vision from "@/segments/Vision/page";

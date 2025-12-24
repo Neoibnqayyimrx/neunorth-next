@@ -131,42 +131,42 @@ export const ourApproaches = [
                   solutions that grow alongside your business.`,
   },
 ];
-
+// constants/data.ts
 export const services = [
   {
     title: "Cloud Solutions",
-    description:
-      "Secure and scalable cloud solutions tailored to fit your business needs, enabling seamless data access and collaboration from anywhere.",
+    slug: "cloud-solutions", 
+    description: "Secure and scalable cloud solutions tailored to fit your business needs, enabling seamless data access and collaboration from anywhere.",
     icon: WiDayCloudyGusts,
   },
   {
     title: "Cybersecurity",
-    description:
-      "Protect your business with robust cybersecurity solutions that safeguard data and prevent unauthorized access, ensuring peace of mind.",
+    slug: "cybersecurity", 
+    description: "Protect your business with robust cybersecurity solutions that safeguard data and prevent unauthorized access, ensuring peace of mind.",
     icon: BsShieldLock,
   },
   {
     title: "Custom Software Development",
-    description:
-      "Develop custom software solutions that enhance efficiency and align perfectly with your business processes and goals.",
+    slug: "custom-software-development", 
+    description: "Develop custom software solutions that enhance efficiency and align perfectly with your business processes and goals.",
     icon: FaCode,
   },
   {
     title: "IT Consulting",
-    description:
-      " Leverage our expertise to make strategic IT decisions that drive growth and optimize your technology investments.",
+    slug: "it-consulting", 
+    description: "Leverage our expertise to make strategic IT decisions that drive growth and optimize your technology investments.",
     icon: FaRegLightbulb,
   },
   {
     title: "Data Analytics",
-    description:
-      "Turn raw data into actionable insights with advanced analytics that inform smarter business decisions.",
+    slug: "data-analytics", 
+    description: "Turn raw data into actionable insights with advanced analytics that inform smarter business decisions.",
     icon: BsBarChartLine,
   },
   {
     title: "Project Management",
-    description:
-      "Optimize your business connectivity with reliable, high-speed network infrastructure solutions designed to keep your operations seamless and resilient.",
+    slug: "project-management", 
+    description: "Optimize your business connectivity with reliable, high-speed network infrastructure solutions designed to keep your operations seamless and resilient.",
     icon: IoGitNetworkSharp,
   },
 ];
@@ -419,15 +419,15 @@ export const footer = [
     subRoutes: [
       {
         title: "About Us",
-        id: "about",
+        id: "/about",
       },
       {
         title: "Services",
-        id: "services",
+        id: "/service",
       },
       {
         title: "Academy",
-        id: "academy",
+        id: "/academy",
       },
       {
         title: "Careers",
@@ -435,7 +435,7 @@ export const footer = [
       },
       {
         title: "Contact Us",
-        id: "contact us",
+        id: "contact",
       },
     ],
   },

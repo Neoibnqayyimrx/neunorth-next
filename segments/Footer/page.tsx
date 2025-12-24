@@ -9,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 import { useRef } from "react";
 import NeunorthLogo from "@/components/NeunorthLogo/page";
 import { FaArrowRight } from "react-icons/fa6";
+import Link from "next/link";
 
 
 interface SubRoute {
@@ -90,13 +91,14 @@ const Footer = () => {
               <h3 className="title">{list.title}</h3>
               <div className="routes">
                 {list.subRoutes.map((route: SubRoute, index: number) => (
-                  <button
+                  <Link
+                    href={route.id}
                     key={index}
                     className="route"
                     onClick={() => handleScrollTo(route.id)}
                   >
                     {route.title}
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
