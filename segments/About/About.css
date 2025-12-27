@@ -2,7 +2,7 @@
 #about .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding:  70px 20px;
+  padding: 70px 20px;
   position: relative;
 }
 
@@ -22,7 +22,7 @@
   line-height: 1.6;
 }
 
-/* Spotlight Effect - Improved to match global.css */
+/* Spotlight Effect */
 #about .spotlight {
   position: absolute;
   width: 322px;
@@ -39,7 +39,7 @@
   transform: translateX(-50%);
 }
 
-/* Hero Section  */
+/* Hero Section */
 #about .vision-item.hero {
   background-size: cover;
   color: var(--color-white);
@@ -79,7 +79,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px  60px;
+  padding: 50px 60px;
   background: rgba(0, 0, 0, 0.3);
 }
 
@@ -112,86 +112,85 @@
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
 }
 
-/* Country Cards */
-#about .country-cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top:  40px;
+/* Swiper Container */
+#about .swiper-container {
+  margin-top: 40px;
+  padding: 0 10px 50px;
+  position: relative;
 }
 
+#about .company-swiper {
+  padding-bottom: 50px;
+}
+
+/* Redesigned Country Cards */
 #about .country-card {
-  background: var(--bg-secondary);
-  border-radius: 1.5rem;
-  padding: 25px;
-  text-align: center;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  border: 2px solid transparent;
-  height: 100%;
-  min-height: 320px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+  background: var(--bg-secondary);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  height: 400px;
+  text-decoration: none;
+  position: relative;
 }
 
 #about .country-card:hover {
   transform: translateY(-8px);
   border-color: var(--primary);
   box-shadow: 0 10px 30px rgba(92, 178, 179, 0.2);
-  background: var(--bg-accent);
 }
 
-/* Image Container */
-#about .country-image-container {
+/* Image Section - 55% of card */
+#about .card-image-section {
   position: relative;
-  width: 160px;
-  height: 80px;
-  border-radius: 1rem;
+  height: 48%;
+  width: 100%;
   overflow: hidden;
-  margin-bottom: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  transition: var(--transition);
   background: var(--bg-accent);
 }
 
-#about .country-card:hover .country-image-container {
-  transform: scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  background: var(--bg-base);
-}
-
-#about .country-image {
+#about .card-bg-image {
   transition: var(--transition);
-  width: 60px;
-  height: 120px;
-  object-fit: contain;
 }
 
-#about .country-card:hover .country-image {
+#about .country-card:hover .card-bg-image {
   transform: scale(1.1);
 }
 
-/* Text Content */
-#about .country-text-content {
-  flex: 1;
+#about .image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  z-index: 1;
+}
+
+/* Content Section - 45% of card */
+#about .card-content-section {
+  padding: 25px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  width: 100%;
+  text-align: center;
+  height: 45%;
+  background: var(--bg-secondary);
+  transition: var(--transition);
+}
+
+#about .country-card:hover .card-content-section {
+  background: var(--bg-accent);
 }
 
 #about .country-name {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: var(--text-color);
   transition: var(--transition);
 }
@@ -200,41 +199,66 @@
   color: var(--primary);
 }
 
+/* Company Logo below title */
+#about .company-logo-container {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  min-height: 70px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: var(--bg-accent);
+  transition: var(--transition);
+  border: 2px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+#about .country-card:hover .company-logo-container {
+  transform: scale(1.05);
+  border-color: var(--primary);
+  background: var(--bg-base);
+}
+
+#about .company-logo {
+  transition: var(--transition);
+  max-width: 100%;
+  max-height: 100%;
+}
+
 #about .country-description {
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.6;
   margin: 0;
   transition: var(--transition);
-  -webkit-line-clamp: 3;
-  line-clamp: 3;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 #about .country-card:hover .country-description {
   color: var(--text-color);
 }
 
-/* Link */
-#about .country-link {
-  margin-top: auto;
-  padding: 8px 16px;
-  background: transparent;
-  color: var(--text-muted);
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 500;
+/* Swiper Pagination */
+#about .swiper-pagination-bullet {
+  background: var(--text-muted);
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
   transition: var(--transition);
-  border: 1px solid var(--border-color);
 }
 
-#about .country-card:hover .country-link {
-  color: var(--primary);
-  border-color: var(--primary);
-  background: rgba(92, 178, 179, 0.1);
+#about .swiper-pagination-bullet-active {
+  background: var(--primary);
+  opacity: 1;
+  width: 30px;
+  border-radius: 5px;
 }
 
 /* Why Neunorth Section */
@@ -271,18 +295,7 @@
   margin-bottom: 15px;
 }
 
-#about .why-choose-us .icon img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-  transition: var(--transition);
-}
-
-#about .why-choose-us:hover .icon img {
-  transform: scale(1.1);
-}
-
-#about .why-choose-us h4 {
+#about .why-choose-us h3 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
@@ -310,10 +323,6 @@
   #about .vision-item.hero .vision-content {
     padding: 40px 30px;
   }
-
-  #about .why-choose-us-container .country-cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -333,29 +342,29 @@
     font-size: 16px;
   }
 
-  #about .country-cards-container,
   #about .why-choose-us-container {
     grid-template-columns: 1fr;
   }
 
   #about .country-card {
-    padding: 50px 10px;
-    min-height: auto;
-  }
-
-  #about .country-image-container {
-    width: 150px;
-    height: 80px;
-    margin-bottom: 40px;
+    height: 380px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  #about .country-cards-container {
-    gap: 15px;
-  }
-  
   #about .why-choose-us {
+    padding: 20px 15px;
+  }
+
+  #about .swiper-container {
+    padding: 0 5px 50px;
+  }
+
+  #about .country-card {
+    height: 360px;
+  }
+
+  #about .card-content-section {
     padding: 20px 15px;
   }
 }

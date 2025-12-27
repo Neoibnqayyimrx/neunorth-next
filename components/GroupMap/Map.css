@@ -1,4 +1,4 @@
-/* Map container */
+/* Map Container */
 .map-wrapper {
   width: 100%;
   height: 400px;
@@ -12,13 +12,11 @@
   transition: var(--transition);
 }
 
-/* Leaflet map container */
 .leaflet-map {
   font-family: "Montserrat", sans-serif;
   z-index: 1;
   color: var(--text-color);
 }
-
 
 .leaflet-container {
   background: var(--bg-secondary);
@@ -28,6 +26,7 @@
   filter: brightness(0.8) contrast(1.1);
 }
 
+/* Leaflet Controls */
 .leaflet-control-attribution {
   font-size: 11px !important;
   background: rgba(28, 28, 28, 0.9) !important;
@@ -47,7 +46,36 @@
   color: var(--color-white) !important;
 }
 
+.leaflet-control-zoom {
+  border: 1px solid var(--border-color) !important;
+  background: var(--bg-accent) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
 
+.leaflet-control-zoom a {
+  background: var(--bg-secondary) !important;
+  color: var(--text-color) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: var(--transition);
+}
+
+.leaflet-control-zoom a:hover {
+  background: var(--bg-accent) !important;
+  color: var(--primary) !important;
+}
+
+.leaflet-control-zoom a:first-child {
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+}
+
+.leaflet-control-zoom a:last-child {
+  border-bottom-left-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  border-bottom: none !important;
+}
+
+/* Nigeria Marker */
 .nigeria-marker {
   animation: pulse 2s infinite;
   cursor: pointer;
@@ -55,9 +83,8 @@
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
+  0%, 100% { transform: scale(1); }
   50% { transform: scale(1.4); }
-  100% { transform: scale(1); }
 }
 
 .nigeria-div-icon {
@@ -80,7 +107,7 @@
   font-family: "Inter", sans-serif;
 }
 
-
+/* Location Markers */
 .custom-div-icon {
   background: transparent !important;
   border: none !important;
@@ -121,7 +148,7 @@
   filter: brightness(1.2);
 }
 
-
+/* Popups */
 .leaflet-popup-content-wrapper {
   border-radius: 8px !important;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
@@ -139,6 +166,14 @@
   font-size: 14px;
   font-family: "Inter", sans-serif;
   color: var(--text-color) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--bg-accent) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+  border: 1px solid var(--border-color);
+  border-top: none !important;
+  border-left: none !important;
 }
 
 .popup-content {
@@ -220,123 +255,35 @@
   color: var(--primary);
 }
 
-
-.leaflet-popup-tip {
-  background: var(--bg-accent) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-  border: 1px solid var(--border-color);
-  border-top: none !important;
-  border-left: none !important;
-}
-
-
-.leaflet-control-zoom {
-  border: 1px solid var(--border-color) !important;
-  background: var(--bg-accent) !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-}
-
-.leaflet-control-zoom a {
-  background: var(--bg-secondary) !important;
-  color: var(--text-color) !important;
-  border-bottom: 1px solid var(--border-color) !important;
-  transition: var(--transition);
-}
-
-.leaflet-control-zoom a:hover {
-  background: var(--bg-accent) !important;
-  color: var(--primary) !important;
-}
-
-.leaflet-control-zoom a:first-child {
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
-}
-
-.leaflet-control-zoom a:last-child {
-  border-bottom-left-radius: 4px !important;
-  border-bottom-right-radius: 4px !important;
-  border-bottom: none !important;
-}
-
-
+/* Connection Lines */
 .leaflet-pane.leaflet-overlay-pane svg path.leaflet-interactive {
   filter: drop-shadow(0 2px 4px rgba(92, 178, 179, 0.2));
 }
 
-
+/* Media Queries */
 @media screen and (max-width: 768px) {
-  .map-wrapper {
-    height: 350px;
-    border-radius: 8px;
-    margin-top: 30px;
-  }
-  
-  .leaflet-popup-content {
-    min-width: 140px !important;
-    margin: 12px !important;
-  }
-  
-  .custom-marker {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .marker-logo {
-    width: 22px !important;
-    height: 22px !important;
-  }
-  
-  .popup-logo {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .company-link {
-    padding: 6px 8px;
-    gap: 10px;
-  }
-  
-  .company-name {
-    font-size: 13px;
-  }
-  
-  .company-link-text {
-    font-size: 10px;
-  }
+  .map-wrapper { height: 350px; border-radius: 8px; margin-top: 30px; }
+  .leaflet-popup-content { min-width: 140px !important; margin: 12px !important; }
+  .custom-marker { width: 32px; height: 32px; }
+  .marker-logo { width: 22px !important; height: 22px !important; }
+  .popup-logo { width: 24px; height: 24px; }
+  .company-link { padding: 6px 8px; gap: 10px; }
+  .company-name { font-size: 13px; }
+  .company-link-text { font-size: 10px; }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .map-wrapper {
-    height: 450px;
-  }
+  .map-wrapper { height: 450px; }
 }
 
-
+/* Accessibility */
 @media (prefers-contrast: high) {
-  .custom-marker {
-    border-width: 3px;
-  }
-  
-  .leaflet-popup-content-wrapper {
-    border-width: 2px;
-  }
-  
-  .company-link {
-    border: 1px solid var(--border-color);
-  }
+  .custom-marker { border-width: 3px; }
+  .leaflet-popup-content-wrapper { border-width: 2px; }
+  .company-link { border: 1px solid var(--border-color); }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
-  .custom-marker,
-  .company-link,
-  .nigeria-marker {
-    transition: none !important;
-    animation: none !important;
-  }
-  
-  .custom-marker:hover {
-    transform: none !important;
-  }
+  .custom-marker, .company-link, .nigeria-marker { transition: none !important; animation: none !important; }
+  .custom-marker:hover { transform: none !important; }
 }

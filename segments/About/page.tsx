@@ -11,11 +11,18 @@ const NigeriaMap = dynamic(() => import('@/components/GroupMap/page'), {
   ssr: false,
   loading: () => <div>Loading map...</div>
 });
-import GroupMap from "@/components/GroupMap/page"
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 import { useRef } from "react";
 
@@ -24,35 +31,41 @@ gsap.registerPlugin(ScrollTrigger);
 // Country locations data
 const countryLocations = [
   {
-    company: "SuperLab",
-    description: "Tecnology and AI Development",
-    url: "https://superlab.rocks/",
+    company: "Neunorth",
+    description: "IT Project Management & Digital Development",
+    url: "https://neunorth.com/",
+    bgImage: "/assets/blog1.jpg", 
+    logo: "/assets/Logo.png", 
   },
- {
-  company: "Space",
-  description: "Project Management & IT services",
-  url: "https://space.consulting",
-},
-
+  {
+    company: "SuperLab",
+    description: "Technology and AI Development",
+    url: "https://superlab.rocks/",
+    bgImage: "/assets/blog2.jpg",
+    logo: "/assets/superlab.svg",
+  },
+  {
+    company: "Space",
+    description: "Project Management & IT services",
+    url: "https://space.consulting",
+    bgImage: "/assets/blog3.jpg", 
+    logo: "/assets/space.png",
+  },
   {
     company: "Leap",
     description: "Process Excellence & Organizational Change",
     url: "https://leap-cg.com",
+    bgImage: "/assets/blog1.jpg", 
+    logo: "/assets/leap.avif",
   },
   {
     company: "supBRT",
     description: "IT Strategy & Architecture",
     url: "https://superberater.com/",
+    bgImage: "/assets/blog2.jpg", 
+    logo: "/assets/supBRT.svg",
   },
 ];
-
-
-const countryFlags: Record<string, string> = {
-  superlab: "/assets/superlab.svg",
-  space: "/assets/space.png",
-  leap: "/assets/leap.avif",
-  supbrt: "/assets/supBRT.svg",
-};
 
 // Why Neunorth data
 const whyNeunorth = [
@@ -104,12 +117,6 @@ const About = () => {
           { y: 0, opacity: 1, stagger: 0.2, duration: 0.8 }
         )
         .fromTo(
-          "#about .country-card",
-          { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.15, duration: 0.7 },
-          "-=0.4"
-        )
-        .fromTo(
           "#about .why-choose-us",
           { y: 40, opacity: 0 },
           { y: 0, opacity: 1, stagger: 0.15, duration: 0.7 },
@@ -153,7 +160,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Global Presence - Country Cards */}
+        {/* Global Presence - Swiper Cards */}
         <div className="global-presence-section">
           <h2 className="section-title">Our Global Presence</h2>
           <p className="section-subtitle">
@@ -161,40 +168,81 @@ const About = () => {
             worldwide
           </p>
 
-          <div className="country-cards-container">
-            {countryLocations.map((location, index) => (
-              <a
-                href={location.url}
-                key={index}
-                className="country-card"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ 
-                  backgroundColor: convertHexToRgba("--bg-secondary", 0.8) 
-                }}
-              >
-                {/* Flag Image Container */}
-                <div className="country-image-container">
-                  <Image
-                    src={countryFlags[location.company.toLowerCase()] || ""}
-                    width={80}
-                    height={80}
-                    alt={`${location.company} flag`}
-                    className="country-image"
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-                <h3 className="country-name">{location.company}</h3>
-                <p className="country-description">
-                  {location.description}
-                </p>
-              </a>
-            ))}
+          <div className="swiper-container">
+            <Swiper
+              modules={[Autoplay, Pagination]}
+              spaceBetween={20}
+              slidesPerView={1}
+              loop={true}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+                dynamicBullets: true,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                1024: {
+                  slidesPerView: 4,
+                  spaceBetween: 20,
+                },
+              }}
+              className="company-swiper"
+            >
+              {countryLocations.map((location, index) => (
+                <SwiperSlide key={index}>
+                  <a
+                    href={location.url}
+                    className="country-card"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {/* Background Image - 40% */}
+                    <div className="card-image-section">
+                      <Image
+                        src={location.bgImage || "/assets/default-bg.jpg"}
+                        fill
+                        alt={`${location.company} background`}
+                        className="card-bg-image"
+                        style={{ objectFit: "cover" }}
+                      />
+                      <div className="image-overlay"></div>
+                    </div>
+
+                    {/* Content Section - 60% */}
+                    <div className="card-content-section">
+                      <h3 className="country-name">{location.company}</h3>
+                      
+                      {/* Logo below title */}
+                      <div className="company-logo-container">
+                        <Image
+                          src={location.logo}
+                          width={60}
+                          height={60}
+                          alt={`${location.company} logo`}
+                          className="company-logo"
+                          style={{ objectFit: "contain" }}
+                        />
+                      </div>
+
+                      <p className="country-description">
+                        {location.description}
+                      </p>
+                    </div>
+                  </a>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
 
         <div>
-            <NigeriaMap />
+          <NigeriaMap />
         </div>
 
         {/* Why Neunorth */}
