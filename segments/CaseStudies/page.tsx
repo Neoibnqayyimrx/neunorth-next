@@ -75,8 +75,8 @@ const CaseStudies: FC<CaseStudiesProps> = () => {
       <section id="case-studies" ref={container}>
         <div className="container">
           <div className="section-header">
-            <h3>Case Studies</h3>
             <h2>Real Projects, Real Results</h2>
+            <h3>Case Studies</h3>
             <div className="header-decoration"></div>
           </div>
           <Swiper

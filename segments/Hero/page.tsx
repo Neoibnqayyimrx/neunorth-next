@@ -58,12 +58,12 @@ const HeroSection: React.FC = () => {
 
         <div className="hero-image">
           <Image
-            src={heroImage}
+            src="/assets/tmdbridge.jpg"
             alt="Professional leader"
             width={800}
             height={800}
-            priority
-            style={{ width: "100%", height: "auto" }}
+            style={{ transform: "scaleX(-1)" }}
+            unoptimized
           />
         </div>
       </div>

@@ -63,20 +63,21 @@ export const navRoutes = [
   },
   {
     path: "/about",
-    name: "About Us",
+    name: "About",
   },
   {
     path: "/service",
     name: "Service",
   },
-  {
-    path: "/academy",
-    name: "Academy",
-  },
    {
     path: "/careers",
     name: "Careers",
   },
+  {
+    path: "/academy",
+    name: "Academy",
+  },
+  
   {
     path: "/contact",
     name: "Contact",
@@ -233,20 +234,21 @@ export const contactInfo = [
 
 export const socialHandles = [
   {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://www.facebook.com",
+    name: "LinkedIn",
+    icon: FaLinkedin,
+    link: "https://www.linkedin.com",
   },
-  {
+   {
     name: "Instagram",
     icon: FaInstagram,
     link: "https://www.instagram.com",
   },
   {
-    name: "LinkedIn",
-    icon: FaLinkedin,
-    link: "https://www.linkedin.com",
+    name: "Facebook",
+    icon: FaFacebook,
+    link: "https://www.facebook.com",
   },
+  
   {
     name: "Youtube",
     icon: FaYoutube,
