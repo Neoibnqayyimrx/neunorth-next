@@ -4,12 +4,12 @@ import "./About.css";
 import Image from "next/image";
 
 import VRImage from "@/public/assets/vr.png";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 
 import { convertHexToRgba } from "@/util/page";
-const NigeriaMap = dynamic(() => import('@/components/GroupMap/page'), {
+const NigeriaMap = dynamic(() => import("@/components/GroupMap/page"), {
   ssr: false,
-  loading: () => <div>Loading map...</div>
+  loading: () => <div>Loading map...</div>,
 });
 
 import gsap from "gsap";
@@ -17,14 +17,15 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
 import { useRef } from "react";
+import Achievement from "../Achievement/page";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,11 +35,11 @@ const countryLocations = [
     company: "Neunorth",
     description: "IT Project Management & Digital Development",
     url: "https://neunorth.com/",
-    bgImage: "/assets/blog1.jpg", 
-    logo: "/assets/Logo.png", 
+    bgImage: "/assets/blog1.jpg",
+    logo: "/assets/Logo.png",
   },
   {
-    company: "SuperLab",
+    company: "superLab",
     description: "Technology and AI Development",
     url: "https://superlab.rocks/",
     bgImage: "/assets/blog2.jpg",
@@ -48,21 +49,21 @@ const countryLocations = [
     company: "Space",
     description: "Project Management & IT services",
     url: "https://space.consulting",
-    bgImage: "/assets/blog3.jpg", 
+    bgImage: "/assets/blog3.jpg",
     logo: "/assets/space.png",
   },
   {
     company: "Leap",
     description: "Process Excellence & Organizational Change",
     url: "https://leap-cg.com",
-    bgImage: "/assets/blog1.jpg", 
+    bgImage: "/assets/blog1.jpg",
     logo: "/assets/leap.avif",
   },
   {
     company: "supBRT",
     description: "IT Strategy & Architecture",
     url: "https://superberater.com/",
-    bgImage: "/assets/blog2.jpg", 
+    bgImage: "/assets/blog2.jpg",
     logo: "/assets/supBRT.svg",
   },
 ];
@@ -89,11 +90,7 @@ const whyNeunorth = [
     title: "Global & Local Experience",
     description: "Strong global and local experience",
   },
-  {
-    icon: "📊",
-    title: "Full Cycle Guidance",
-    description: "Steady guidance across the full project cycle",
-  },
+   
 ];
 
 const About = () => {
@@ -138,12 +135,7 @@ const About = () => {
         {/* Who We Are Section */}
         <div className="vision-item hero">
           <div className="image-container">
-            <Image 
-              src={VRImage} 
-              alt="Who We Are" 
-              placeholder="blur"
-              priority
-            />
+            <Image src={VRImage} alt="Who We Are" placeholder="blur" priority />
           </div>
 
           <div className="vision-content">
@@ -217,7 +209,7 @@ const About = () => {
                     {/* Content Section - 60% */}
                     <div className="card-content-section">
                       <h3 className="country-name">{location.company}</h3>
-                      
+
                       {/* Logo below title */}
                       <div className="company-logo-container">
                         <Image
@@ -241,8 +233,9 @@ const About = () => {
           </div>
         </div>
 
-        <div>
+        <div className="map-achievement-container">
           <NigeriaMap />
+          <Achievement />
         </div>
 
         {/* Why Neunorth */}
@@ -254,8 +247,8 @@ const About = () => {
               <div
                 className="blur why-choose-us"
                 key={index}
-                style={{ 
-                  backgroundColor: convertHexToRgba("--bg-secondary", 0.8) 
+                style={{
+                  backgroundColor: convertHexToRgba("--bg-secondary", 0.8),
                 }}
               >
                 <div className="icon">

@@ -6,6 +6,7 @@ import {
   Polyline,
   Marker,
   Popup,
+  useMapEvents,
 } from "react-leaflet";
 import L from "leaflet";
 import Image from "next/image";
@@ -24,7 +25,7 @@ const LOCATIONS = [
   },
   {
     name: "Germany",
-    coords: [51.16, 10.45] as [number, number],
+    coords: [52.52, 13.405] as [number, number], // Berlin
     logo: "/assets/leap.avif",
     url: "#",
   },
@@ -36,12 +37,11 @@ const LOCATIONS = [
   },
   {
     name: "Germany",
-    coords: [55.16, 11.55] as [number, number],
+    coords: [48.1351, 11.582] as [number, number], // Munich
     logo: "/assets/superlab.svg",
     url: "#",
   },
 ];
-
 const createNigeriaIcon = () =>
   L.divIcon({
     html: '<div class="nigeria-marker"><svg width="14" height="14" viewBox="0 0 14 14"><circle cx="7" cy="7" r="6" fill="#ff7a00" stroke="white" stroke-width="2" /></svg></div>',
@@ -57,6 +57,19 @@ const createLocationIcon = (logo: string, name: string) =>
     iconSize: [32, 32],
     iconAnchor: [16, 32],
   });
+
+// Component to handle scroll zoom behavior
+function ScrollZoomHandler() {
+  const map = useMapEvents({
+    click: () => {
+      map.scrollWheelZoom.enable();
+    },
+    mouseout: () => {
+      map.scrollWheelZoom.disable();
+    },
+  });
+  return null;
+}
 
 export default function NigeriaMap() {
   const [isClient, setIsClient] = useState(false);
@@ -98,13 +111,15 @@ export default function NigeriaMap() {
         center={[20, 20]}
         zoom={2}
         style={{ height: "100%", width: "100%" }}
-        scrollWheelZoom
+        scrollWheelZoom={false}
         className="leaflet-map"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        <ScrollZoomHandler />
 
         {LOCATIONS.map((loc, i) => (
           <Polyline

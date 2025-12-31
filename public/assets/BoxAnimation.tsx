@@ -12,8 +12,8 @@ const BoxAnimation: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
       ...props.style
     }}
   >
-    {/* Base rotating frame with enhanced glow */}
-    <g opacity="0.2">
+    {/* Base rotating frame with blur effect */}
+    <g opacity="0.2" filter="url(#blurFilter)">
       <path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -25,7 +25,7 @@ const BoxAnimation: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <animate
           attributeName="opacity"
           values="0.2;0.4;0.2"
-          dur="4s"
+          dur="8s"
           repeatCount="indefinite"
         />
       </path>
@@ -38,7 +38,7 @@ const BoxAnimation: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <animate
           attributeName="opacity"
           values="0.2;0.35;0.2"
-          dur="3s"
+          dur="6s"
           repeatCount="indefinite"
         />
       </path>
@@ -51,242 +51,268 @@ const BoxAnimation: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <animate
           attributeName="opacity"
           values="0.2;0.3;0.2"
-          dur="5s"
+          dur="10s"
           repeatCount="indefinite"
         />
       </path>
     </g>
 
-    {/* Primary particle - Purple with enhanced trail */}
-    <ellipse
-      cx="295.027"
-      cy="193.118"
-      transform="translate(-295.027 -193.118)"
-      rx="1.5"
-      ry="1.5"
-      fill="#945DD6"
-    >
-      <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_2" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.6;1;0.6"
-        dur="2s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
-    <path
-      d="M294.685 193.474L268.932 219.258"
-      transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
-      stroke="url(#paint3_linear)"
-      strokeWidth="2"
-    >
-      <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_2" />
-      </animateMotion>
-    </path>
+    {/* Primary particle - Purple with enhanced trail - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="295.027"
+        cy="193.118"
+        transform="translate(-295.027 -193.118)"
+        rx="1.5"
+        ry="1.5"
+        fill="#945DD6"
+      >
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.6;1;0.6"
+          dur="4s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+      <path
+        d="M294.685 193.474L268.932 219.258"
+        transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
+        stroke="url(#paint3_linear)"
+        strokeWidth="2"
+      >
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+      </path>
+    </g>
 
-    {/* Secondary particle - Orange delayed */}
-    <ellipse
-      cx="295.027"
-      cy="193.118"
-      transform="translate(-295.027 -193.118)"
-      rx="1.5"
-      ry="1.5"
-      fill="#F46737"
-    >
-      <animateMotion dur="5s" begin="1s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_2" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.6;1;0.6"
-        dur="1.5s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
-    <path
-      d="M294.685 193.474L268.932 219.258"
-      transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
-      stroke="url(#paint7_linear)"
-      strokeWidth="2"
-    >
-      <animateMotion dur="5s" begin="1s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_2" />
-      </animateMotion>
-    </path>
+    {/* Secondary particle - Orange delayed - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="295.027"
+        cy="193.118"
+        transform="translate(-295.027 -193.118)"
+        rx="1.5"
+        ry="1.5"
+        fill="#F46737"
+      >
+        <animateMotion dur="10s" begin="2s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.6;1;0.6"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+      <path
+        d="M294.685 193.474L268.932 219.258"
+        transform="translate(-294.685 -193.474) rotate(45 294.685 193.474)"
+        stroke="url(#paint7_linear)"
+        strokeWidth="2"
+      >
+        <animateMotion dur="10s" begin="2s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_2" />
+        </animateMotion>
+      </path>
+    </g>
 
-    {/* Tertiary particle - Purple on path 0 */}
-    <ellipse
-      cx="476.525"
-      cy="363.313"
-      rx="1.5"
-      ry="1.5"
-      transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-      fill="#945DD6"
-    >
-      <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.5;1;0.5"
-        dur="2.5s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
-    <path
-      d="M476.171 362.952L450.417 337.168"
-      transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
-      stroke="url(#paint4_linear)"
-      strokeWidth="2"
-    >
-      <animateMotion dur="10s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-    </path>
+    {/* Tertiary particle - Purple on path 0 - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="476.525"
+        cy="363.313"
+        rx="1.5"
+        ry="1.5"
+        transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
+        fill="#945DD6"
+      >
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.5;1;0.5"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+      <path
+        d="M476.171 362.952L450.417 337.168"
+        transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
+        stroke="url(#paint4_linear)"
+        strokeWidth="2"
+      >
+        <animateMotion dur="20s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
+    </g>
 
-    {/* Fourth particle - Orange on path 0 */}
-    <ellipse
-      cx="382.164"
-      cy="155.029"
-      rx="1.5"
-      ry="1.5"
-      transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
-      fill="#F46737"
-    >
-      <animateMotion dur="10s" begin="1s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.5;1;0.5"
-        dur="2s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
-    <path
-      d="M381.81 154.669L356.057 128.885"
-      transform="translate(-381.81 -154.669) rotate(-45 381.81 154.669)"
-      stroke="url(#paint5_linear)"
-      strokeWidth="2"
-    >
-      <animateMotion dur="10s" begin="1s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-    </path>
+    {/* Fourth particle - Orange on path 0 - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="382.164"
+        cy="155.029"
+        rx="1.5"
+        ry="1.5"
+        transform="translate(-382.164 -155.029) rotate(90 382.164 155.029)"
+        fill="#F46737"
+      >
+        <animateMotion dur="20s" begin="2s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.5;1;0.5"
+          dur="4s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+      <path
+        d="M381.81 154.669L356.057 128.885"
+        transform="translate(-381.81 -154.669) rotate(-45 381.81 154.669)"
+        stroke="url(#paint5_linear)"
+        strokeWidth="2"
+      >
+        <animateMotion dur="20s" begin="2s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
+    </g>
 
-    {/* Fifth particle - Orange on path 1 */}
-    <ellipse
-      cx="333.324"
-      cy="382.691"
-      rx="1.5"
-      ry="1.5"
-      transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
-      fill="#F46737"
-    >
-      <animateMotion dur="5s" begin="0s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_1" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.6;1;0.6"
-        dur="1.8s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
-    <path
-      d="M333.667 382.335L359.42 356.551"
-      transform="scale(-1 1) translate(-333.667 -382.335) rotate(45 333.667 382.335)"
-      stroke="url(#paint6_linear)"
-      strokeWidth="2"
-    >
-      <animateMotion dur="5s" begin="0s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_1" />
-      </animateMotion>
-    </path>
+    {/* Fifth particle - Orange on path 1 - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="333.324"
+        cy="382.691"
+        rx="1.5"
+        ry="1.5"
+        transform="translate(-333.324 -382.691) rotate(-180 333.324 382.691)"
+        fill="#F46737"
+      >
+        <animateMotion dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_1" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.6;1;0.6"
+          dur="3.6s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+      <path
+        d="M333.667 382.335L359.42 356.551"
+        transform="scale(-1 1) translate(-333.667 -382.335) rotate(45 333.667 382.335)"
+        stroke="url(#paint6_linear)"
+        strokeWidth="2"
+      >
+        <animateMotion dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_1" />
+        </animateMotion>
+      </path>
+    </g>
 
-    {/* Sixth particle - Orange delayed on path 0 */}
-    <ellipse
-      cx="165.524"
-      cy="93.9596"
-      rx="1.5"
-      ry="1.5"
-      transform="translate(-165.524 -93.9596)"
-      fill="#F46737"
-    >
-      <animateMotion dur="10s" begin="3s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.5;1;0.5"
-        dur="2.2s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
-    <path
-      d="M165.182 94.3159L139.429 120.1"
-      transform="translate(-165.182 -94.3159) rotate(45 165.182 94.3159)"
-      stroke="url(#paint7_linear)"
-      strokeWidth="2"
-    >
-      <animateMotion dur="10s" begin="3s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-    </path>
+    {/* Sixth particle - Orange delayed on path 0 - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="165.524"
+        cy="93.9596"
+        rx="1.5"
+        ry="1.5"
+        transform="translate(-165.524 -93.9596)"
+        fill="#F46737"
+      >
+        <animateMotion dur="20s" begin="6s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.5;1;0.5"
+          dur="4.4s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+      <path
+        d="M165.182 94.3159L139.429 120.1"
+        transform="translate(-165.182 -94.3159) rotate(45 165.182 94.3159)"
+        stroke="url(#paint7_linear)"
+        strokeWidth="2"
+      >
+        <animateMotion dur="20s" begin="6s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
+    </g>
 
-    {/* Seventh particle - Cyan accent */}
-    <ellipse
-      cx="476.525"
-      cy="363.313"
-      rx="1.5"
-      ry="1.5"
-      transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
-      fill="#5cb2b3"
-    >
-      <animateMotion dur="12s" begin="4s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.4;1;0.4"
-        dur="3s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
-    <path
-      d="M476.171 362.952L450.417 337.168"
-      transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
-      stroke="url(#paint11_linear)"
-      strokeWidth="2"
-    >
-      <animateMotion dur="12s" begin="4s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_0" />
-      </animateMotion>
-    </path>
+    {/* Seventh particle - Cyan accent - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="476.525"
+        cy="363.313"
+        rx="1.5"
+        ry="1.5"
+        transform="translate(-476.525 -363.313) rotate(90 476.525 363.313)"
+        fill="#5cb2b3"
+      >
+        <animateMotion dur="24s" begin="8s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.4;1;0.4"
+          dur="6s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+      <path
+        d="M476.171 362.952L450.417 337.168"
+        transform="translate(-476.525 -363.313) rotate(-45 476.171 362.952)"
+        stroke="url(#paint11_linear)"
+        strokeWidth="2"
+      >
+        <animateMotion dur="24s" begin="8s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_0" />
+        </animateMotion>
+      </path>
+    </g>
 
-    {/* Additional accent particles */}
-    <ellipse
-      cx="295.027"
-      cy="193.118"
-      rx="1.5"
-      ry="1.5"
-      fill="#5cb2b3"
-    >
-      <animateMotion dur="7s" begin="2s" repeatCount="indefinite" rotate="auto">
-        <mpath xlinkHref="#path_1" />
-      </animateMotion>
-      <animate
-        attributeName="opacity"
-        values="0.4;1;0.4"
-        dur="2s"
-        repeatCount="indefinite"
-      />
-    </ellipse>
+    {/* Additional accent particles - With blur */}
+    <g filter="url(#particleBlur)">
+      <ellipse
+        cx="295.027"
+        cy="193.118"
+        rx="1.5"
+        ry="1.5"
+        fill="#5cb2b3"
+      >
+        <animateMotion dur="14s" begin="4s" repeatCount="indefinite" rotate="auto">
+          <mpath xlinkHref="#path_1" />
+        </animateMotion>
+        <animate
+          attributeName="opacity"
+          values="0.4;1;0.4"
+          dur="4s"
+          repeatCount="indefinite"
+        />
+      </ellipse>
+    </g>
 
     <defs>
+      {/* Blur filter for box outlines */}
+      <filter id="blurFilter">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+      </filter>
+      
+      {/* Blur filter for particles */}
+      <filter id="particleBlur">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+      </filter>
+      
       <radialGradient
         id="paint0_radial"
         cx="0"

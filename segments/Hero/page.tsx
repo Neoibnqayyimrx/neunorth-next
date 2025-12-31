@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
       <div className="container">
         <div>
           <h1 className="hero-title">
-            Project leadership and digital delivery for global clients.{" "}
+            Project&nbsp;leadership and digital delivery for global clients.
           </h1>
           <p className="hero-description">
             We help organisations plan, build, and deliver projects through
