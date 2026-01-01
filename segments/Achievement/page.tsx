@@ -29,7 +29,7 @@ const Achievement = () => {
             setTimeout(() => {
               setClients(70);
               setSatisfaction(10);
-              setProjects(100); 
+              setProjects(100);
             }, 1000);
           },
         },
@@ -47,50 +47,35 @@ const Achievement = () => {
   return (
     <section id="achievement" ref={container}>
       <div className="container">
-        
         <div className="achievement">
-        <p className="sub-title">Over</p>
+          <p className="sub-title">Over</p>
           <CountUp
             end={satisfaction}
             duration={2}
             className="title"
             preserveValue
           />
-         
 
-          <p className="description">
-            Projects Engagements Globally.
-          </p>
+          <p className="description">Projects Engagements Globally.</p>
         </div>
 
         <div className="achievement">
-        <p className="sub-title">More Than</p>
-          <CountUp
-            end={clients}
-            duration={2}
-            className="title"
-            preserveValue
-          />
-          <p className="description">
-            Man years of working Experience
-          </p>
+          <p className="sub-title">More Than</p>
+          <CountUp end={clients} duration={2} className="title" preserveValue />
+          <p className="description">Man years of working Experience</p>
         </div>
 
         <div className="achievement">
-
           <CountUp
             end={projects}
             duration={2}
             className="title"
             preserveValue
-            formattingFn={(value) => "∞"}
+            suffix="%"
           />
 
-          <p className="description">
-            Potential for growth
-          </p>
+          <p className="description">On-time Project delivery rate</p>
         </div>
-
       </div>
     </section>
   );

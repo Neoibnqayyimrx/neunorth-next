@@ -69,7 +69,7 @@
 #hero .hero-image {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  max-width: 560px;
   height: 80vh;
   margin-bottom: 50px;
   align-self: center;
@@ -92,7 +92,7 @@
   }
   
   #hero .hero-image {
-    max-width: 450px;
+    max-width: 480px; /* Increased from 450px */
   }
 }
 
@@ -107,7 +107,7 @@
   }
   
   #hero .hero-image {
-    max-width: 400px;
+    max-width: 420px; /* Increased from 400px */
     height: 70vh;
   }
 }
@@ -125,7 +125,7 @@
   }
   
   #hero .hero-image {
-    max-width: 500px;
+    max-width: 520px; /* Increased from 500px */
     height: 75vh;
     margin: 0 auto;
   }
@@ -141,7 +141,7 @@
 
 @media screen and (max-width: 600px) {
   #hero .hero-image {
-    max-width: 400px;
+    max-width: 420px; /* Increased from 400px */
   }
   
   #hero .hero-title {
@@ -157,7 +157,7 @@
   }
   
   #hero .hero-image {
-    max-width: 320px;
+    max-width: 340px; /* Increased from 320px */
   }
   
   #hero .buttons-wrapper {

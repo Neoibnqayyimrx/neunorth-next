@@ -41,6 +41,11 @@
     transform: translateY(20px);
 }
 
+#achievement .achievement:nth-child(3) {
+    min-width: 230px;
+    transform: translateY(20px);
+}
+
 #achievement .achievement .title {
     font-size: clamp(28px, 3.5vw, 36px);
     font-weight: 600;

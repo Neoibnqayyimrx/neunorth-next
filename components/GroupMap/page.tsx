@@ -26,7 +26,7 @@ const LOCATIONS = [
   {
     name: "Germany",
     coords: [52.52, 13.405] as [number, number], // Berlin
-    logo: "/assets/leap.avif",
+    logo: "/assets/supBRT.svg",
     url: "#",
   },
   {
