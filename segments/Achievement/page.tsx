@@ -48,20 +48,25 @@ const Achievement = () => {
     <section id="achievement" ref={container}>
       <div className="container">
         <div className="achievement">
-          <p className="sub-title">Over</p>
           <CountUp
             end={satisfaction}
             duration={2}
             className="title"
             preserveValue
+             suffix="+"
           />
 
           <p className="description">Projects Engagements Globally.</p>
         </div>
 
         <div className="achievement">
-          <p className="sub-title">More Than</p>
-          <CountUp end={clients} duration={2} className="title" preserveValue />
+          <CountUp
+           end={clients} 
+           duration={2} 
+           className="title" 
+           preserveValue
+            suffix="+"
+            />
           <p className="description">Man years of working Experience</p>
         </div>
 

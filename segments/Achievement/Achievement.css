@@ -47,21 +47,15 @@
 }
 
 #achievement .achievement .title {
-    font-size: clamp(28px, 3.5vw, 36px);
+    font-size: clamp(38px, 4.5vw, 46px);
     font-weight: 600;
     line-height: 1;
     margin: 5px 0;
 }
 
-#achievement .achievement .sub-title {
-    font-size: clamp(12px, 1.5vw, 14px);
-    font-weight: 500;
-    margin-bottom: 3px;
-    line-height: 1.2;
-}
-
+ 
 #achievement .achievement .description {
-    font-size: clamp(10px, 1.2vw, 12px);
+    font-size: clamp(15px, 1.5vw, 15px);
     margin-top: 8px;
     line-height: 1.2;
     padding: 0 5px;
