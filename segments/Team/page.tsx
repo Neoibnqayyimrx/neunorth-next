@@ -194,8 +194,8 @@ const Team: FC<TeamProps> = () => {
       <section id="team">
         <div className="container" ref={container}>
           <div className="section-header">
-            <h3>Our Team</h3>
             <h2>Meet the Experts</h2>
+            <h3>Our Team</h3>
             <div className="header-decoration"></div>
           </div>
           
@@ -283,6 +283,7 @@ const Team: FC<TeamProps> = () => {
                             rel="noopener noreferrer"
                             className="linkedin-link"
                             onClick={(e) => e.stopPropagation()}
+                            
                           >
                             <FaLinkedin size={20} />
                           </a>

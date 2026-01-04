@@ -2,6 +2,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  margin: 30px auto;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -24,7 +25,7 @@
     left: 50%;
     top: 20%;
     transform: translate(-50%, -50%);
-    opacity: 0.1;
+    opacity: 1;
 }
 
 .hero-container {
@@ -86,12 +87,6 @@
   height: 500px;
   border-radius: 20px;
   overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    rgba(92, 178, 179, 0.1) 0%,
-    rgba(92, 178, 179, 0.05) 100%
-  );
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .hero-image {
@@ -103,46 +98,6 @@
 
 .hero-image-wrapper:hover .hero-image {
   transform: scale(1.02);
-}
-
-.image-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  background: linear-gradient(
-    135deg,
-    var(--bg-secondary) 0%,
-    var(--bg-accent) 100%
-  );
-}
-
-.placeholder-icon {
-  font-size: 80px;
-  opacity: 0.5;
-}
-
-.placeholder-text {
-  color: var(--text-muted);
-  font-size: 18px;
-  text-align: center;
-}
-
-.image-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40%;
-  background: linear-gradient(
-    to top,
-    rgba(18, 18, 18, 0.8) 0%,
-    transparent 100%
-  );
-  pointer-events: none;
 }
 
 /* Responsive Design */

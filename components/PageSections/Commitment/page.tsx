@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
-import missionImage from "@/public/assets/blog2.jpg"; 
+import missionImage from "@/public/assets/blog2.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,8 +16,25 @@ const Commitment: FC<CommitmentProps> = () => {
 
   useGSAP(
     () => {
+      // Header animation
       gsap.fromTo(
-        "#commitment .commitment-content",
+        ".commitment-header",
+        { y: -30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top 75%",
+          },
+        }
+      );
+
+      // Content animation from left
+      gsap.fromTo(
+        ".commitment-content",
         { x: -80, opacity: 0 },
         {
           x: 0,
@@ -33,7 +50,7 @@ const Commitment: FC<CommitmentProps> = () => {
 
       // Image animation from right
       gsap.fromTo(
-        "#commitment .commitment-image-wrapper",
+        ".commitment-image-wrapper",
         { x: 80, opacity: 0 },
         {
           x: 0,
@@ -47,15 +64,15 @@ const Commitment: FC<CommitmentProps> = () => {
         }
       );
 
-      
+      // Badge animation with bounce
       gsap.fromTo(
-        "#commitment .commitment-tag",
+        ".commitment-badge",
         { scale: 0, opacity: 0 },
         {
           scale: 1,
           opacity: 1,
           duration: 0.5,
-          delay: 0.4,
+          delay: 0.6,
           ease: "back.out(1.7)",
           scrollTrigger: {
             trigger: container.current,
@@ -70,19 +87,24 @@ const Commitment: FC<CommitmentProps> = () => {
   return (
     <section id="commitment" ref={container}>
       <div className="container">
+        <div className="commitment-header">
+          <h1 className="commitment-title">Empowering Technology Globally</h1>
+          <h2 className="commitment-badge">Our Commitment</h2>
+        </div>
+        
         <div className="commitment-grid">
           {/* Left: Content */}
           <div className="commitment-content">
-            <div className="commitment-tag">Our Commitment</div>
-            <h2>Empowering Technology Globally</h2>
             <div className="commitment-text">
               <p>
-                We help clients achieve <strong>clarity and structure</strong> in
-                their IT projects and digital initiatives. Alongside this, we
-                support emerging talent across Africa, creating a capable workforce
-                that can manage and sustain meaningful technological work.
+                We help clients achieve <strong>clarity and structure</strong>{" "}
+                in their IT projects and digital initiatives. Alongside this, we
+                support emerging talent across Africa, creating a capable
+                workforce that can manage and sustain meaningful technological
+                work.
               </p>
             </div>
+
             <div className="commitment-highlights">
               <div className="highlight-item">
                 <div className="highlight-number">01</div>
@@ -91,6 +113,7 @@ const Commitment: FC<CommitmentProps> = () => {
                   <p>Structured approach to IT delivery</p>
                 </div>
               </div>
+              
               <div className="highlight-item">
                 <div className="highlight-number">02</div>
                 <div className="highlight-text">
@@ -111,13 +134,13 @@ const Commitment: FC<CommitmentProps> = () => {
                 height={700}
                 className="commitment-image"
                 style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover'
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
                 }}
               />
-              <div className="image-overlay"></div>
-              <div className="image-decoration"></div>
+              <div className="image-overlay" />
+              <div className="image-decoration" />
             </div>
           </div>
         </div>

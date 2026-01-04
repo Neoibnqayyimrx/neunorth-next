@@ -1,5 +1,4 @@
 #team {
-    background: var(--bg-secondary);
     position: relative;
     overflow: hidden;
     padding: 80px 0;
@@ -8,29 +7,40 @@
 #team .section-header {
     text-align: center;
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 
 #team .section-header h3 {
     position: relative;
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     display: inline-block;
 }
 
 #team .header-decoration {
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, transparent, var(--accent-color, #5cb2b3), transparent);
     margin: 20px auto 0;
     border-radius: 2px;
     animation: glow 2s ease-in-out infinite;
 }
 
-@keyframes glow {
-    0%, 100% { opacity: 0.6; transform: scaleX(1); }
-    50% { opacity: 1; transform: scaleX(1.2); }
+#team .header-decoration::after{
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    opacity: 0.3;
 }
-
-
+ 
 #team .team-swiper {
     padding: 20px 10px 60px;
     perspective: 1000px;
@@ -43,21 +53,21 @@
 
 
 #team .team-card {
-    background: var(--bg-base);
     overflow: hidden;
+    border: 1px solid var(--bg-secondary);
     border-radius: 1.2rem;
     position: relative;
     cursor: pointer;
     transform-style: preserve-3d;
     transition: box-shadow 0.4s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px var(--bg-secondary);
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
 #team .team-card:hover {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 60px var(--bg-secondary);
 }
 
 #team .card-inner {
@@ -86,18 +96,7 @@
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-#team .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
+ 
 
 #team .team-card .bottom {
     padding: 20px;
@@ -118,7 +117,7 @@
 }
 
 #team .team-card:hover .bottom .member-name {
-    color: var(--accent-color, #5cb2b3);
+    color: var(--primary);
 }
 
 #team .team-card .bottom .member-role {
@@ -137,9 +136,10 @@
 }
 
 #team .focus-tag {
-    background: var(--accent-color, #5cb2b3);
+    background: none;
     color: white;
     padding: 4px 10px;
+    border: 1px solid var(--primary);
     border-radius: 12px;
     font-size: 0.7rem;
     font-weight: 500;
@@ -167,23 +167,18 @@
     justify-content: center;
     width: 36px;
     height: 36px;
-    background: #0077b5;
-    color: white;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
+    background: var(--bg-secondary);
+    color: var(--primary);
+    border-radius: 10px;
+    transition: var(--transition);
 }
-
-#team .linkedin-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
-}
+ 
 
 #team .view-details-btn {
     display: flex;
     align-items: center;
     gap: 6px;
-    color: var(--accent-color, #5cb2b3);
+    color: var(--primary);
     font-weight: 600;
     font-size: 0.85rem;
     background: none;
@@ -236,7 +231,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--bg-secondary);
     backdrop-filter: blur(8px);
     z-index: 9999;
     display: flex;
@@ -253,7 +248,7 @@
     max-width: 900px;
     width: 100%;
     position: relative;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 50px var(--bg-base);
     max-height: 90vh;
     overflow-y: auto;
 }
@@ -265,7 +260,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--bg-secondary);
     backdrop-filter: blur(10px);
     border: none;
     color: white;
@@ -278,7 +273,7 @@
 }
 
 .modal-close:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--bg-secondary);
     transform: rotate(90deg);
 }
 
@@ -319,7 +314,7 @@
 
 .modal-role {
     font-size: 1.1rem;
-    color: var(--accent-color, #5cb2b3);
+    color: var(--primary);
     font-weight: 600;
     margin: 0;
 }
@@ -327,7 +322,7 @@
 
 .modal-section {
     padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--bg-secondary);
 }
 
 .modal-section h3 {
@@ -354,9 +349,10 @@
 }
 
 .modal-focus-tag {
-    background: var(--accent-color, #5cb2b3);
+    background: none;
     color: white;
     padding: 8px 16px;
+    border: 1px solid var(--primary);
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 500;
@@ -367,8 +363,8 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #0077b5;
-    color: white;
+    background: var(--primary);
+    color: var(--color-white);
     padding: 12px 24px;
     border-radius: 8px;
     font-weight: 600;
@@ -380,9 +376,9 @@
 }
 
 .modal-linkedin:hover {
-    background: #005885;
+    background: var(--primary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 119, 181, 0.4);
+    box-shadow: 0 8px 20px var(--primary);
 }
 
 
@@ -395,7 +391,7 @@
 }
 
 #team .swiper-pagination-bullet-active {
-    background: var(--accent-color, #5cb2b3);
+    background: var(--primary);
     opacity: 1;
     width: 28px;
     border-radius: 5px;
@@ -519,15 +515,4 @@
     }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-    #team .swiper-button-next,
-    #team .swiper-button-prev {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-    }
-    
-    .modal-section {
-        border-top-color: rgba(255, 255, 255, 0.1);
-    }
-}
+ 

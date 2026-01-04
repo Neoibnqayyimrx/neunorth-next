@@ -1,11 +1,13 @@
 "use client";
+
 import { FC, useRef } from "react";
 import { contactInfo } from "@/constants/data";
 import Socials from "@/components/Socials/page";
+import styles from "./Contact.module.css";
+
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import "./Contact.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,100 +18,84 @@ interface ContactInfoItem {
   value: string;
 }
 
-interface ContactProps {}
+const Contact: FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
 
-const Contact: FC<ContactProps> = () => {
-  const container = useRef<HTMLDivElement>(null);
-  
   useGSAP(
     () => {
       gsap
         .timeline({
-          delay: 0.5,
           scrollTrigger: {
-            trigger: container.current,
-            start: "20% bottom",
-            end: "bottom top",
+            trigger: sectionRef.current,
+            start: "top 80%",
           },
         })
         .fromTo(
-          ".contact-header .badge",
-          { scale: 0, opacity: 0 },
+          `.${styles.badge}`,
+          { scale: 0.6, opacity: 0 },
           { scale: 1, opacity: 1, duration: 0.5 }
         )
         .fromTo(
-          ".contact-header h2",
-          { y: 30, opacity: 0 },
+          `.${styles.contactHeader}`,
+          { y: 40, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.6 }
         )
         .fromTo(
-          ".contact-header .description",
-          { y: 20, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.5 }
+          `.${styles.contactCard}`,
+          { yPercent: 20, opacity: 0 },
+          { yPercent: 0, opacity: 1, stagger: 0.2, duration: 0.6 }
         )
+
         .fromTo(
-          ".contact-card",
-          { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, stagger: 0.2, duration: 0.6 }
-        )
-        .fromTo(
-          ".cta-section",
-          { y: 50, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.6 }
-        )
-        .fromTo(
-          ".socials-wrapper",
+          `.${styles.socialsWrapper}`,
           { y: 30, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.5 }
         );
     },
-    { scope: container }
+    { scope: sectionRef }
   );
 
   return (
-    <section id="contact" ref={container}>
-      <div className="container">
-        {/* Header */}
-        <div className="contact-header">
+    <section id="contact" ref={sectionRef} className={styles.contact}>
+      <div className={styles.container}>
+        {/* HEADER */}
+        <header className={styles.contactHeader}>
           <h2>Get In Touch</h2>
-           <div className="badge">
-            <span>Let's Connect</span>
+          <div className={styles.badge}>
+            <span>Let’s Connect</span>
           </div>
-           <div className="header-decoration"></div>
-          <p className="description">
-            Have a project in mind or need expert advice? We're here to help with 
-            personalized consultations and innovative solutions.
+          <p className={styles.description}>
+            Have a project in mind or need expert advice? We’re here to help
+            with personalized consultations and innovative solutions.
           </p>
-        </div>
+        </header>
 
-        {/* Contact Cards Grid */}
-        <div className="contact-cards-grid">
-          {contactInfo.map((info: ContactInfoItem, index: number) => {
-            const IconComponent = info.icon;
+        {/* CARDS */}
+        <div className={styles.contactCardsGrid}>
+          {contactInfo.map((info: ContactInfoItem, index) => {
+            const Icon = info.icon;
             return (
-              <div className="contact-card" key={index}>
-                <div className="card-glow"></div>
-                <div className="card-content">
-                  <div className="icon-wrapper">
-                    <IconComponent className="contact-icon" />
-                  </div>
-                  <h3>{info.title}</h3>
-                  <p className="description">{info.description}</p>
-                  <p className="value">{info.value}</p>
+              <article className={styles.contactCard} key={index}>
+                <div className={styles.iconWrapper}>
+                  <Icon className={styles.contactIcon} />
                 </div>
-              </div>
+                <h3>{info.title}</h3>
+                <p className={styles.cardDescription}>{info.description}</p>
+                <p className={styles.value}>{info.value}</p>
+              </article>
             );
           })}
         </div>
 
-        {/* Social Links */}
-        <div className="socials-wrapper">
+        {/* SOCIALS */}
+        <div className={styles.socialsWrapper}>
           <h3>Follow Our Journey</h3>
-          <div className="socials">
-             <Socials />
+          <div className={styles.socials}>
+            <Socials />
           </div>
-         
-          <p className="description">Stay updated with our latest projects and insights</p>
+          <p className={styles.description}>
+            Stay updated with our latest projects and insights
+          </p>
         </div>
       </div>
     </section>

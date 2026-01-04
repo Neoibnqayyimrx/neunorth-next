@@ -85,9 +85,7 @@ const Navbar: React.FC = () => {
         aria-label="Main navigation"
       >
         {/* Make logo a link to home */}
-        <Link href="/" className="logo-link">
           <NeunorthLogo />
-        </Link>
 
         {/* Desktop Navigation Links */}
         <div className="route-wrapper hidden md:flex" aria-hidden="false">

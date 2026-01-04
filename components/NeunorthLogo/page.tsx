@@ -3,15 +3,16 @@ import Logo from '@/public/assets/Logo.png'; // Recommended: move image to publi
 import './NeunorthLogo.css';
 import Link from 'next/link';
 
-const NeunorthLogo: React.FC = () => {
+// components/NeunorthLogo/page.tsx
+const NeunorthLogo: React.FC<{ className?: string }> = ({ className }) => {
   return (
-    <Link href="/" className="logo">
+    <Link href="/" className={`logo ${className || ''}`}>
       <Image
         src={Logo}
         alt="Neunorth Logo"
-        width={120}    // Adjust based on your design
-        height={40}    // Adjust based on your design
-        priority       // Optional: use if this logo is above the fold
+        width={120}
+        height={40}
+        priority
       />
       <h1>Neunorth</h1>
     </Link>

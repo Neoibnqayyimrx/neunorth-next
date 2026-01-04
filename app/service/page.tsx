@@ -9,7 +9,6 @@ import "./service.css";
 import HeroSection from "@/components/PageSections/Heros/page";
 import VRImage from "@/public/assets/vr.png";
 import Image from "next/image";
-import Vision from "@/segments/Vision/page";
 import OurServices from "@/components/PageSections/OurServices/page";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -110,7 +109,6 @@ export default function ServicesPage() {
 
       {/* Imported Services Component */}
       <Service />
-      <Vision />
     </>
   );
 }
