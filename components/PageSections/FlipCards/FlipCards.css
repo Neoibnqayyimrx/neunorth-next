@@ -71,7 +71,7 @@
 
 /* Front Card - WITH IMAGE */
 .flipcard-front {
-  background: var(--color-white);
+  background: var(--bg-base);
   display: flex;
   flex-direction: column;
   transform: rotateY(0deg);
@@ -116,14 +116,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--color-white);
+  background: var(--bg-secondary);
 }
 
 .flipcard-title {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.4;
-  color: #111827;
+  color: var(--color-white);
   margin-bottom: 16px;
 }
 
