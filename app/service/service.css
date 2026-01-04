@@ -60,25 +60,7 @@
   margin-bottom: 30px;
 }
 
-#service-section .service-item.hero .service-cta {
-  display: inline-block;
-  padding: 14px 32px;
-  background: var(--color-white);
-  color: var(--primary);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-  border: none;
-  cursor: pointer;
-}
 
-#service-section .service-item.hero .service-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -113,8 +95,4 @@
     font-size: 16px;
   }
   
-  #service-section .service-item.hero .service-cta {
-    padding: 12px 24px;
-    font-size: 14px;
-  }
 }

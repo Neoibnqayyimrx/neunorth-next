@@ -100,7 +100,7 @@ export default function ServicesPage() {
               partnerships thrive, and individuals are trained and empowered to
               succeed in technology fields.
             </p>
-            <a href="#contact" className="service-cta">
+            <a href="#contact" className="btn primary">
               Learn More About Us
             </a>
           </div>

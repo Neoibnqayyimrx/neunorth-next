@@ -38,7 +38,6 @@ const Service = () => {
             "#services .section-header h3",
             "#services .section-header h2",
             "#services .services .service",
-            "#services .spotlight",
           ],
           { y: 50, opacity: 0 },
           { y: 0, opacity: 1, stagger: 0.5 }
@@ -49,7 +48,6 @@ const Service = () => {
 
   return (
     <section id="services" ref={container}>
-      <div className="spotlight" />
       <div className="container">
         <div className="section-header">
           <h2>Empowering Your Business with Tailored IT Solutions</h2>
